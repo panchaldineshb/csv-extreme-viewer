@@ -7,6 +7,7 @@ namespace CSVXtremeLoader
 {
     public class CSVStatistics
     {
+        asasdasdasd
         public int TotalLinesCount { get; set; }
         public long TotalBytes { get; set; }
         public long BytesRead { get; set; }

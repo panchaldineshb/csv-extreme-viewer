@@ -7,3 +7,12 @@ C:\Users\Usuario\documents\visual studio 2010\Projects\CSV Xtreme Viewer\CSV Xtr
 C:\Users\Usuario\documents\visual studio 2010\Projects\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\CSV Xtreme Viewer.pdb
 C:\Users\Usuario\documents\visual studio 2010\Projects\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\CSVXtremeLoader.MainForm.resources
 C:\Users\Usuario\documents\visual studio 2010\Projects\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\CSVXtremeLoader.Properties.Resources.resources
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\CSV Xtreme Viewer.exe
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\CSV Xtreme Viewer.pdb
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\bin\Debug\CSV Xtreme Viewer.exe
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\bin\Debug\CSV Xtreme Viewer.pdb
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\CSVXtremeLoader.MainForm.resources
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\CSVXtremeLoader.Properties.Resources.resources
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\GenerateResource.write.1.tlog
