@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CSVXtremeLoader.Structures;
 using System.Text.RegularExpressions;
+using System.Timers;
 
 namespace CSVXtremeLoader
 {
@@ -24,6 +25,21 @@ namespace CSVXtremeLoader
             buffer = new LinesBuffer();
             statistics = new CSVStatistics();
 
+            System.Timers.Timer timer = new System.Timers.Timer(500);
+            timer.AutoReset = true;
+            timer.Elapsed += new ElapsedEventHandler(UpdateStatus);
+            timer.Enabled = true;
+        }
+
+        delegate void DoUpdateStatus(object source, ElapsedEventArgs e);
+        public void UpdateStatus(object source, ElapsedEventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(new DoUpdateStatus(UpdateStatus), new object[] { source, e });
+                return;
+            }
+            LoadStatusLabel.Text = statistics.Status;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)

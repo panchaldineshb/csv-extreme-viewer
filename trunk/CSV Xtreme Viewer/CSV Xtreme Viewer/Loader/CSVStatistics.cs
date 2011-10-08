@@ -15,10 +15,12 @@ namespace CSVXtremeLoader
         public int bufferMaximumLength { get; set; }
         public int bufferLength { get; set; }
         public int bufferPosition { get; set; }
+        public string Status { get; set; }
 
         public CSVStatistics()
         {
             bufferMaximumLength = 100;
+            Status = "Idle";
         }
 
     }

@@ -22,6 +22,7 @@ namespace CSVXtremeLoader
             reader.BaseStream.Position = 0;
 
             int ticks = System.Environment.TickCount;
+            statistics.Status = "Indexing";
 
             while (true)
             {
@@ -39,7 +40,9 @@ namespace CSVXtremeLoader
 
                 if (refillRequired)
                 {
+                    statistics.Status = "Buffering";
                     FillBufferFromLine(refillLineNumber);
+                    statistics.Status = "Indexing";
                 }
             }
             lineNumberIndex.FinishIndex();

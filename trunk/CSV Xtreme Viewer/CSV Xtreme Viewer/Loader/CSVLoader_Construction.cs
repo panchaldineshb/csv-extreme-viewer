@@ -76,6 +76,7 @@ namespace CSVXtremeLoader
 
         public void Ended()
         {
+            statistics.Status = "Idle";
             UpdateStatus(null, null);
             timer.Enabled = false;
         }
