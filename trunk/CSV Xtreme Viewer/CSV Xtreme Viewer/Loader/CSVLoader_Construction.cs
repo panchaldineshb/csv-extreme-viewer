@@ -46,6 +46,7 @@ namespace CSVXtremeLoader
             timer.Elapsed += new ElapsedEventHandler(UpdateStatus);
 
             runningThread = new Thread(new ThreadStart(RunIndexing));
+            runningThread.Priority = ThreadPriority.BelowNormal;
         }
 
         public void Start()

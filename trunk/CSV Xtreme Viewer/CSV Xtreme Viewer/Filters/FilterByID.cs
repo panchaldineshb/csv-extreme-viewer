@@ -21,10 +21,14 @@ namespace CSVXtremeLoader
 
         public bool IsLineValid(Line line)
         {
-            int id = Convert.ToInt32(line.columns[column]);
-            if (id < minID) return false;
-            if (id > maxID) return false;
-            return true;
+            try
+            {
+                int id = Convert.ToInt32(line.columns[column]);
+                if (id < minID) return false;
+                if (id > maxID) return false;
+                return true;
+            }
+            catch (FormatException) { return false; }
         }
     }
 }

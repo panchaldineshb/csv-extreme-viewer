@@ -8,7 +8,7 @@ namespace CSVXtremeLoader.Loader
 {
     class Index
     {
-        private const int intervalOfBytes = 1024 * 1024;
+        public const int intervalOfBytes = 1024 * 1024;
         private const int intervalOfBytes2 = intervalOfBytes * 2;
         private int indexSize;
         private int index;
@@ -33,7 +33,6 @@ namespace CSVXtremeLoader.Loader
             index++;
             lastLine = line;
             lastBytePosition = bytePosition;
-            Console.WriteLine("Line added: " + line);
         }
 
         public void AddToIndex(int line, int bytePosition)

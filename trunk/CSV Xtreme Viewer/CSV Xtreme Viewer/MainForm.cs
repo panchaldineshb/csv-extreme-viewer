@@ -13,6 +13,7 @@ namespace CSVXtremeLoader
 {
     public partial class MainForm : Form, LoaderListener
     {
+        private CSVLoader loader;
         private LinesBuffer buffer;
         private CSVStatistics statistics;
 
@@ -33,9 +34,9 @@ namespace CSVXtremeLoader
             Metadata metadata = new Metadata("Id,Name,Phone");
             setupGridWithMetadata(metadata);
 
-            CSVLoader loader = new CSVLoader(openCSVFileDialog.FileName, buffer, statistics);
+            loader = new CSVLoader(openCSVFileDialog.FileName, buffer, statistics);
             loader.SetListener(this);
-            //loader.AddFilter(new FilterByID(0, 5, 10));
+            //loader.AddFilter(new FilterByID(0, 5000, 100000));
             loader.SetMetatada(metadata);
             loader.Start();
         }
@@ -94,6 +95,7 @@ namespace CSVXtremeLoader
                 e.Value = line.columns[e.ColumnIndex];
             } else if (result == LinesBuffer.LOAD_REQUIRED) {
                 e.Value = "...";
+                loader.RefillBuffer(e.RowIndex);
             } else if (result == LinesBuffer.EMPTY) {
                 // Do nothing?
             }

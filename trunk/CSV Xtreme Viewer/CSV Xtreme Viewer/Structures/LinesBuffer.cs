@@ -25,8 +25,12 @@ namespace CSVXtremeLoader
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void AddLine(Line line)
         {
-            if (currentNode == null) currentNode = buffer.Last;
             buffer.AddLast(line);
+            if (currentNode == null)
+            {
+                currentNode = buffer.Last;
+                CurrentLine = currentNode.Value.LineNumber;
+            }
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]
