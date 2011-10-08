@@ -149,7 +149,7 @@ namespace CSVXtremeLoader
                 if (ProcessLineForBuffer(line, lineNumber, position))
                 {
                     lineNumber++;
-                    size += position - reader.BaseStream.Position;
+                    size += reader.BaseStream.Position - position;
                     if (size > Index.intervalOfBytes) break;
                 }
             }

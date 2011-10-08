@@ -81,7 +81,21 @@ namespace CSVXtremeLoader.Loader
             }
             else if (lineNumber > value)
             {
-                return FindClosestIndexToLine(middle, end, lineNumber);
+                if ((middle == start) && (start + 1 == end))
+                {
+                    if (entries[end].LineNumber < lineNumber)
+                    {
+                        return FindClosestIndexToLine(end, end, lineNumber);
+                    }
+                    else
+                    {
+                        return FindClosestIndexToLine(start, start, lineNumber);
+                    }
+                }
+                else
+                {
+                    return FindClosestIndexToLine(middle, end, lineNumber);
+                }
             }
             else
             {
