@@ -17,7 +17,7 @@ namespace CSVXtremeLoader
         private CSVStatistics statistics;
         private System.Timers.Timer timer;
         private Thread runningThread;
-        private List<Filter> filters;
+        private List<IFilter> filters;
         private Metadata metadata;
         private Index lineNumberIndex;
 
@@ -33,7 +33,7 @@ namespace CSVXtremeLoader
 
             this.buffer = buffer;
 
-            filters = new List<Filter>();
+            filters = new List<IFilter>();
             lineNumberIndex = new Index(reader.BaseStream.Length);
 
             this.statistics = statistics;
@@ -95,7 +95,7 @@ namespace CSVXtremeLoader
             this.listener = listener;
         }
 
-        public void AddFilter(Filter filter)
+        public void AddFilter(IFilter filter)
         {
             filters.Add(filter);
         }

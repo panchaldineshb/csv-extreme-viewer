@@ -48,7 +48,6 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.FileToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.openCSVFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.MenuStrip.SuspendLayout();
             this.StatusStrip.SuspendLayout();
             this.ToolStripContainer.ContentPanel.SuspendLayout();
@@ -76,7 +75,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // openToolStripMenuItem
@@ -85,33 +84,33 @@
             this.openToolStripMenuItem.RightToLeftAutoMirrorImage = true;
             this.openToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.openToolStripMenuItem.Text = "&Open...";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // filtersToolStripMenuItem
             // 
             this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
-            this.filtersToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.filtersToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.filtersToolStripMenuItem.Text = "F&ilters";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = false;
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(621, 17);
+            this.StatusLabel.Size = new System.Drawing.Size(620, 17);
             this.StatusLabel.Spring = true;
             this.StatusLabel.Text = "Ready.";
             this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,7 +123,7 @@
             // LoadStatusLabel
             // 
             this.LoadStatusLabel.Name = "LoadStatusLabel";
-            this.LoadStatusLabel.Size = new System.Drawing.Size(25, 17);
+            this.LoadStatusLabel.Size = new System.Drawing.Size(26, 17);
             this.LoadStatusLabel.Text = "Idle";
             // 
             // StatusStrip
@@ -192,6 +191,7 @@
             // ToolStripContainer.TopToolStripPanel
             // 
             this.ToolStripContainer.TopToolStripPanel.Controls.Add(this.FileToolStrip);
+            this.ToolStripContainer.TopToolStripPanel.Click += new System.EventHandler(this.ToolStripContainer_TopToolStripPanel_Click);
             // 
             // dataGridView
             // 
@@ -215,7 +215,7 @@
             this.toolStripButton1});
             this.FileToolStrip.Location = new System.Drawing.Point(4, 0);
             this.FileToolStrip.Name = "FileToolStrip";
-            this.FileToolStrip.Size = new System.Drawing.Size(33, 25);
+            this.FileToolStrip.Size = new System.Drawing.Size(35, 25);
             this.FileToolStrip.TabIndex = 0;
             // 
             // toolStripButton1
@@ -226,11 +226,6 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // openCSVFileDialog
-            // 
-            this.openCSVFileDialog.FileName = "openFileDialog";
-            this.openCSVFileDialog.Title = "Open CSV file...";
             // 
             // MainForm
             // 
@@ -281,7 +276,6 @@
         private System.Windows.Forms.ToolStrip FileToolStrip;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.OpenFileDialog openCSVFileDialog;
     }
 }
 

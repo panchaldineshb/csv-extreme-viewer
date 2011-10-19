@@ -6,7 +6,7 @@ using CSVXtremeLoader.Structures;
 
 namespace CSVXtremeLoader
 {
-    class FilterByID : Filter
+    class FilterByID : IFilter
     {
         private int column;
         private int minID;
@@ -19,7 +19,7 @@ namespace CSVXtremeLoader
             this.maxID = maxID;
         }
 
-        public bool IsLineValid(Line line)
+        public bool IsLineValid(Line line, Metadata metadata)
         {
             try
             {

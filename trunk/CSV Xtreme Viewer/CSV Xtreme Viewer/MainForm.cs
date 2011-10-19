@@ -44,13 +44,14 @@ namespace CSVXtremeLoader
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = openCSVFileDialog.ShowDialog(this);
+            csvOpen open = new csvOpen();
+            DialogResult result = open.ShowDialog(this);
             if (result != DialogResult.OK) return;
 
-            Metadata metadata = new Metadata("Id,Name,Phone");
+            Metadata metadata = new Metadata("Id,Name,Phone","num,text,text");
             setupGridWithMetadata(metadata);
 
-            loader = new CSVLoader(openCSVFileDialog.FileName, buffer, statistics);
+            loader = new CSVLoader(open.FileName, buffer, statistics);
             loader.SetListener(this);
             //loader.AddFilter(new FilterByID(0, 5000, 100000));
             loader.SetMetatada(metadata);
@@ -115,6 +116,11 @@ namespace CSVXtremeLoader
             } else if (result == LinesBuffer.EMPTY) {
                 // Do nothing?
             }
+        }
+
+        private void ToolStripContainer_TopToolStripPanel_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

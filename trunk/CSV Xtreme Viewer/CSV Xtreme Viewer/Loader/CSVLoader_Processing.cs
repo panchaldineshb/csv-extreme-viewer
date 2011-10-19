@@ -80,8 +80,8 @@ namespace CSVXtremeLoader
             }
 
             // Apply all the filters to the line
-            foreach (Filter filter in filters) {
-                if (!filter.IsLineValid(line))
+            foreach (IFilter filter in filters) {
+                if (!filter.IsLineValid(line,metadata))
                 {
                     return false;
                 }
@@ -183,9 +183,9 @@ namespace CSVXtremeLoader
             }
 
             // Apply all the filters to the line
-            foreach (Filter filter in filters)
+            foreach (IFilter filter in filters)
             {
-                if (!filter.IsLineValid(line))
+                if (!filter.IsLineValid(line,metadata))
                 {
                     return false;
                 }

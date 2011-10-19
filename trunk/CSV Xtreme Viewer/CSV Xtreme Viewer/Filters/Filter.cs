@@ -6,8 +6,14 @@ using CSVXtremeLoader.Structures;
 
 namespace CSVXtremeLoader
 {
-    interface Filter
+    interface IFilter
     {
-        bool IsLineValid(Line line);
+        bool IsLineValid(Line line, Metadata metadata);
+    }
+    
+    class Filter
+    {
+        protected string subType;
+        protected string column;
     }
 }
