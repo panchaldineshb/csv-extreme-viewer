@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using CSVXtremeLoader.Structures;
 using System.Text.RegularExpressions;
 using System.Timers;
+using System.IO;
 
 namespace CSVXtremeLoader
 {
@@ -47,8 +48,11 @@ namespace CSVXtremeLoader
             csvOpen open = new csvOpen();
             DialogResult result = open.ShowDialog(this);
             if (result != DialogResult.OK) return;
-
-            Metadata metadata = new Metadata("Id,Name,Phone","num,text,text");
+            StreamReader sr = new StreamReader(open.FileName);
+            string headers = sr.ReadLine();
+            string type = sr.ReadLine();
+            sr.Close();
+            Metadata metadata = new Metadata(headers.Length,headers,type);
             setupGridWithMetadata(metadata);
 
             loader = new CSVLoader(open.FileName, buffer, statistics);
@@ -105,7 +109,7 @@ namespace CSVXtremeLoader
 
         private void dataGridView_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
         {
-            int result = buffer.GoTo(e.RowIndex);
+            int result = buffer.GoTo(e.RowIndex+2);
             if (result == LinesBuffer.READY) {
                 Line line = buffer.CurrentValue();
                 if (e.ColumnIndex >= line.columns.Length) return;
