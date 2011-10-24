@@ -10,10 +10,4 @@ namespace CSVXtremeLoader
     {
         bool IsLineValid(Line line, Metadata metadata);
     }
-    
-    class Filter
-    {
-        protected string subType;
-        protected string column;
-    }
 }

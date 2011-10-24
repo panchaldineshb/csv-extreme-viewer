@@ -243,7 +243,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters";
             // 
-            // frmOpen
+            // csvOpen
             // 
             this.AcceptButton = this.bOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,8 +259,9 @@
             this.Controls.Add(this.txtFile);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmOpen";
+            this.Name = "csvOpen";
             this.Text = "Open";
+            this.Load += new System.EventHandler(this.csvOpen_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

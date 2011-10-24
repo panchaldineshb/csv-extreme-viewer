@@ -13,6 +13,7 @@ namespace CSVXtremeLoader
     public partial class csvOpen : Form
     {
         public string FileName;
+        public string Filters;
 
         public csvOpen()
         {
@@ -36,6 +37,12 @@ namespace CSVXtremeLoader
         private void bOk_Click(object sender, EventArgs e)
         {
             FileName = txtFile.Text;
+            this.Filters = "";
+            foreach (string s in lbInFilters.Items)
+            {
+                this.Filters += s;
+                this.Filters += '\n';
+            }
             if (!File.Exists(txtFile.Text))
                 MessageBox.Show("File does not exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
@@ -67,6 +74,11 @@ namespace CSVXtremeLoader
         private void bRemoveOut_Click(object sender, EventArgs e)
         {
             this.lbOutFilters.Items.Remove(this.lbOutFilters.SelectedItem);
+        }
+
+        private void csvOpen_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

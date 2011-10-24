@@ -54,9 +54,26 @@ namespace CSVXtremeLoader
             sr.Close();
             Metadata metadata = new Metadata(headers.Length,headers,type);
             setupGridWithMetadata(metadata);
-
+            
+            string[] strFilters;
+            string[] strFilter;
+            List<IFilter> Filters = new List<IFilter>();
+            
+            strFilters = open.Filters.Split('\n');
+            foreach (string s in strFilters)
+            {
+                strFilter = s.Split('|');
+                for(int i=0; i<=strFilter.GetUpperBound(0); i++)
+                    strFilter[i] = strFilter[i].Trim();
+                if (strFilter[0].Equals("Text"))
+                    Filters.Add(new TextFilter(strFilter[2], strFilter[1], strFilter[3]));
+                else if (strFilter[0].Equals("Number"))
+                    Filters.Add(new NumberFilter(strFilter[2], strFilter[1], Double.Parse(strFilter[3])));
+            }
             loader = new CSVLoader(open.FileName, buffer, statistics);
             loader.SetListener(this);
+            foreach(IFilter f in Filters)
+                loader.AddFilter(f);
             //loader.AddFilter(new FilterByID(0, 5000, 100000));
             loader.SetMetatada(metadata);
             loader.Start();

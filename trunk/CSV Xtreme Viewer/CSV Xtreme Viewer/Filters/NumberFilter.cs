@@ -6,9 +6,12 @@ using CSVXtremeLoader.Structures;
 
 namespace CSVXtremeLoader
 {
-	class NumberFilter : Filter, IFilter
+	class NumberFilter : IFilter
     {
+        string subType;
+        string column;
         double value;
+
         public NumberFilter(string _subType, string _column, double _value)
         {
             this.subType = _subType;

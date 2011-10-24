@@ -6,8 +6,10 @@ using CSVXtremeLoader.Structures;
 
 namespace CSVXtremeLoader
 {
-	class TextFilter : Filter, IFilter
+	class TextFilter : IFilter
     {
+        string subType;
+        string column;
         string text;
     
         public TextFilter(string _subType, string _column, string _text)
