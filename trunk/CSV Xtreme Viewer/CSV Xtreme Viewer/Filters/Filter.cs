@@ -3,11 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CSVXtremeLoader.Structures;
+using System.Text.RegularExpressions;
 
 namespace CSVXtremeLoader
 {
-    interface IFilter
+    abstract class IFilter
     {
-        bool IsLineValid(Line line, Metadata metadata);
+        protected Regex columnPattern = new Regex("\\G([ ]*\"(?<t>(.|\\\\\")*?)\"[ ]*|(?<t>.*?))(,|$)", RegexOptions.Compiled | RegexOptions.ExplicitCapture);
+
+        public abstract bool IsLineValid(String rawLine, Metadata metadata);
+
+        protected Line ParseLine(string rawLine, Metadata metadata)
+        {
+            int columnsCount = metadata.ColumnsCount;
+            Line line = new Line(columnsCount);
+
+            // Parse the line
+            int count = 0;
+            Match match = columnPattern.Match(rawLine);
+            while (match.Success)
+            {
+                line.columns[count] = match.Groups[1].Value.Trim();
+                count++;
+                match = match.NextMatch();
+                if (count >= columnsCount) break;
+            }
+
+            return line;
+        }
+
     }
 }

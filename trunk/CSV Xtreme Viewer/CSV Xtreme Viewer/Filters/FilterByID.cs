@@ -19,8 +19,9 @@ namespace CSVXtremeLoader
             this.maxID = maxID;
         }
 
-        public bool IsLineValid(Line line, Metadata metadata)
+        public override bool IsLineValid(string rawLine, Metadata metadata)
         {
+            Line line = ParseLine(rawLine, metadata);
             try
             {
                 int id = Convert.ToInt32(line.columns[column]);

@@ -75,7 +75,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // openToolStripMenuItem
@@ -84,33 +84,33 @@
             this.openToolStripMenuItem.RightToLeftAutoMirrorImage = true;
             this.openToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "&Open...";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // filtersToolStripMenuItem
             // 
             this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
-            this.filtersToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.filtersToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.filtersToolStripMenuItem.Text = "F&ilters";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = false;
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(620, 17);
+            this.StatusLabel.Size = new System.Drawing.Size(621, 17);
             this.StatusLabel.Spring = true;
             this.StatusLabel.Text = "Ready.";
             this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,7 +123,7 @@
             // LoadStatusLabel
             // 
             this.LoadStatusLabel.Name = "LoadStatusLabel";
-            this.LoadStatusLabel.Size = new System.Drawing.Size(26, 17);
+            this.LoadStatusLabel.Size = new System.Drawing.Size(25, 17);
             this.LoadStatusLabel.Text = "Idle";
             // 
             // StatusStrip
@@ -215,7 +215,7 @@
             this.toolStripButton1});
             this.FileToolStrip.Location = new System.Drawing.Point(4, 0);
             this.FileToolStrip.Name = "FileToolStrip";
-            this.FileToolStrip.Size = new System.Drawing.Size(35, 25);
+            this.FileToolStrip.Size = new System.Drawing.Size(33, 25);
             this.FileToolStrip.TabIndex = 0;
             // 
             // toolStripButton1
@@ -238,6 +238,7 @@
             this.MainMenuStrip = this.MenuStrip;
             this.Name = "MainForm";
             this.Text = "CSV Xtreme Viewer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
             this.StatusStrip.ResumeLayout(false);

@@ -13,9 +13,15 @@ namespace CSVXtremeLoader
         public const int EMPTY = 1;
         public const int LOAD_REQUIRED = 2;
 
+        public const int MID = 0;
+        public const int SOF = 1;
+        public const int EOF = 2;
+        public int Flag { get; set; }
+
         private LinkedList<Line> buffer;
         private LinkedListNode<Line> currentNode;
         private int CurrentLine;
+
 
         public LinesBuffer()
         {
@@ -34,26 +40,28 @@ namespace CSVXtremeLoader
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]
-        public int GoTo(int index)
+        public int GoTo(int lineNumber)
         {
             if (currentNode == null) return EMPTY;
-            index++;
-            if (index == CurrentLine) return READY;
-            if (index < CurrentLine)
+            lineNumber++;
+            if (lineNumber == CurrentLine) return READY;
+            if (lineNumber < CurrentLine)
             {
-                if (index < buffer.First.Value.LineNumber) return LOAD_REQUIRED;
-                while (index < CurrentLine)
+                if ((lineNumber < buffer.First.Value.LineNumber) && ((Flag & SOF) != SOF)) return LOAD_REQUIRED;
+                while (lineNumber < CurrentLine)
                 {
+                    if (currentNode == null) return LOAD_REQUIRED;
                     currentNode = currentNode.Previous;
                     CurrentLine = currentNode.Value.LineNumber;
                 }
             }
             else
             {
-                if (index > buffer.Last.Value.LineNumber) return LOAD_REQUIRED;
-                while (index> CurrentLine)
+                if ((lineNumber > buffer.Last.Value.LineNumber) && ((Flag & EOF) != EOF)) return LOAD_REQUIRED;
+                while (lineNumber > CurrentLine)
                 {
                     currentNode = currentNode.Next;
+                    if (currentNode == null) return LOAD_REQUIRED;
                     CurrentLine = currentNode.Value.LineNumber;
                 }
             }

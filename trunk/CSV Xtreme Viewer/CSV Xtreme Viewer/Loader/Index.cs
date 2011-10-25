@@ -66,12 +66,13 @@ namespace CSVXtremeLoader.Loader
 
         public int GetIndexOfLine(int lineNumber)
         {
-            return FindClosestIndexToLine(0, index, lineNumber);
+            return FindClosestIndexToLine(0, index - 1, lineNumber);
         }
 
         private int FindClosestIndexToLine(int start, int end, int lineNumber)
         {
-            if (start == end) return start;
+            if (end <= start) return start;
+            if (entries.Count <= end) return start;
 
             int middle = (start + end) / 2;
             int value = entries[middle].LineNumber;
@@ -81,15 +82,15 @@ namespace CSVXtremeLoader.Loader
             }
             else if (lineNumber > value)
             {
-                if ((middle == start) && (start + 1 == end))
+                if (start + 1 == end)
                 {
                     if (entries[end].LineNumber < lineNumber)
                     {
-                        return FindClosestIndexToLine(end, end, lineNumber);
+                        return end;
                     }
                     else
                     {
-                        return FindClosestIndexToLine(start, start, lineNumber);
+                        return start;
                     }
                 }
                 else

@@ -24,47 +24,97 @@ namespace CSVXtremeLoader
             int ticks = System.Environment.TickCount;
             statistics.Status = "Indexing";
 
+            bool filtersExists = (filters.Count > 0);
+
             while (true)
             {
+                long time1 = System.Environment.TickCount;
                 int position = (int)reader.BaseStream.Position;
                 string line = reader.ReadLine();
+                statistics.timeOnReadLine += System.Environment.TickCount - time1;
                 if (line == null) break;
-                line = line.Trim();
-                if (line.Length == 0) continue;
 
                 // Update the statistics
                 statistics.BytesRead = reader.BaseStream.Position;
+                statistics.TotalLinesCount++;
+                statistics.CurrentPosition++;
 
                 // Concentrate on the current line
+                long time2 = System.Environment.TickCount;
                 ProcessLineForIndexing(line, position);
+                statistics.timeOnIndexing += System.Environment.TickCount - time2;
+
 
                 if (refillRequired)
                 {
+                    long time3 = System.Environment.TickCount;
                     statistics.Status = "Buffering";
                     FillBufferFromLine(refillLineNumber);
                     statistics.Status = "Indexing";
+                    statistics.timeOnBuffering += System.Environment.TickCount - time3;
                 }
             }
             lineNumberIndex.FinishIndex();
 
-            ticks = System.Environment.TickCount - ticks;
-            Console.WriteLine("Indexing (ms): " + ticks);
+            statistics.timeTotal = System.Environment.TickCount - ticks;
+            Console.WriteLine("Total Time (ms): " + statistics.timeTotal);
+            Console.WriteLine("TimeOnReadLine (ms): " + statistics.timeOnReadLine);
+            Console.WriteLine("TimeOnAddToIndex (ms): " + statistics.timeOnAddToIndex);
+            Console.WriteLine("TimeOnIndexing (ms): " + statistics.timeOnIndexing);
+            Console.WriteLine("TimeOnFiltering (ms): " + statistics.timeOnFiltering);
+            Console.WriteLine("TimeOnBuffering (ms): " + statistics.timeOnBuffering);
+            long overhead = statistics.timeTotal - statistics.timeOnReadLine - statistics.timeOnAddToIndex - statistics.timeOnIndexing - statistics.timeOnFiltering - statistics.timeOnBuffering;
+            Console.WriteLine("Overhead (ms): " + overhead);
 
             Ended();
         }
 
         private bool ProcessLineForIndexing(string rawLine, int position)
         {
-            statistics.TotalLinesCount++;
-            statistics.CurrentPosition++;
 
             if (rawLine.Length > 10000)
             {
-                // TODO wrong line?
+                statistics.CorruptedLines++;
                 return false;
             }
 
-            // Create a new empty line
+            if (filtersAvailable)
+            {
+                long time1 = System.Environment.TickCount;
+                // Apply all the filters to the line
+                foreach (IFilter filter in filters)
+                {
+                    if (!filter.IsLineValid(rawLine, metadata))
+                    {
+                        statistics.timeOnFiltering += System.Environment.TickCount - time1;
+                        return false;
+                    }
+                }
+                statistics.timeOnFiltering += System.Environment.TickCount - time1;
+            }
+
+            long time2 = System.Environment.TickCount;
+            statistics.FilteredLines++;
+            lineNumberIndex.AddToIndex(statistics.FilteredLines, position);
+            statistics.timeOnAddToIndex += System.Environment.TickCount - time2;
+
+            // Fill the buffer if it is not empty
+            if ((statistics.CurrentPosition > statistics.bufferPosition) && (statistics.bufferLength < statistics.bufferMaximumLength))
+            {
+                long time3 = System.Environment.TickCount;
+                Line line = ParseLine(rawLine);
+                line.LineNumber = statistics.FilteredLines;
+                buffer.AddLine(line);
+                statistics.bufferLength++;
+                isNewLineAvailable = true;
+                statistics.timeOnBuffering += System.Environment.TickCount - time3;
+            }
+
+            return true;
+        }
+
+        private Line ParseLine(string rawLine)
+        {
             int columnsCount = metadata.ColumnsCount;
             Line line = new Line(columnsCount);
 
@@ -79,27 +129,7 @@ namespace CSVXtremeLoader
                 if (count >= columnsCount) break;
             }
 
-            // Apply all the filters to the line
-            foreach (IFilter filter in filters) {
-                if (!filter.IsLineValid(line,metadata))
-                {
-                    return false;
-                }
-            }
-
-            statistics.FilteredLines++;
-            line.LineNumber = statistics.FilteredLines;
-            lineNumberIndex.AddToIndex(line.LineNumber, position);
-
-            // Fill the buffer if it is not empty
-            if ((statistics.CurrentPosition > statistics.bufferPosition) && (statistics.bufferLength < statistics.bufferMaximumLength))
-            {
-                buffer.AddLine(line);
-                statistics.bufferLength++;
-                isNewLineAvailable = true;
-            }
-
-            return true;
+            return line;
         }
 
         public void RefillBuffer(int lineNumber)
@@ -116,11 +146,13 @@ namespace CSVXtremeLoader
                 runningThread = new Thread(new ThreadStart(RunFillBuffer));
                 runningThread.Start();
             }
+            
         }
 
         private void RunFillBuffer()
         {
             FillBufferFromLine(refillLineNumber);
+            if (listener != null) listener.OnNewLinesAvailable(statistics);
         }
 
         private void FillBufferFromLine(int lineNumber)
@@ -135,13 +167,19 @@ namespace CSVXtremeLoader
 
             statistics.bufferLength = 0;
             buffer.Clear();
-
+            buffer.Flag = LinesBuffer.MID;
+            if (lineNumber <= 1) buffer.Flag = buffer.Flag | LinesBuffer.SOF;
+            
             long size = 0;
             while (true)
             {
                 long position = (int)reader.BaseStream.Position;
                 string line = reader.ReadLine();
-                if (line == null) break;
+                if (line == null)
+                {
+                    buffer.Flag = buffer.Flag | LinesBuffer.EOF;
+                    break;
+                }
                 line = line.Trim();
                 if (line.Length == 0) continue;
 
@@ -163,33 +201,20 @@ namespace CSVXtremeLoader
         {
             if (rawLine.Length > 10000)
             {
-                // TODO wrong line?
                 return false;
-            }
-
-            // Create a new empty line
-            int columnsCount = metadata.ColumnsCount;
-            Line line = new Line(columnsCount);
-
-            // Parse the line
-            int count = 0;
-            Match match = columnPattern.Match(rawLine);
-            while (match.Success)
-            {
-                line.columns[count] = match.Groups[1].Value;
-                count++;
-                match = match.NextMatch();
-                if (count >= columnsCount) break;
             }
 
             // Apply all the filters to the line
             foreach (IFilter filter in filters)
             {
-                if (!filter.IsLineValid(line,metadata))
+                if (!filter.IsLineValid(rawLine, metadata))
                 {
                     return false;
                 }
             }
+
+            // Parse the line
+            Line line = ParseLine(rawLine);
 
             // Fill the buffer if it is not empty
             line.LineNumber = lineNumber;

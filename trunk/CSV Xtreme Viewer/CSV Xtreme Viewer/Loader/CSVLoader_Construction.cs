@@ -24,6 +24,7 @@ namespace CSVXtremeLoader
         private bool isNewLineAvailable;
         private LinesBuffer buffer = new LinesBuffer();
         private Regex columnPattern;
+        private bool filtersAvailable;
 
         public CSVLoader(String filename, LinesBuffer buffer, CSVStatistics statistics)
         {
@@ -35,6 +36,7 @@ namespace CSVXtremeLoader
 
             filters = new List<IFilter>();
             lineNumberIndex = new Index(reader.BaseStream.Length);
+            filtersAvailable = false;
 
             this.statistics = statistics;
             statistics.TotalBytes = reader.BaseStream.Length;
@@ -83,6 +85,7 @@ namespace CSVXtremeLoader
 
         public void UpdateStatus(object source, ElapsedEventArgs e)
         {
+            if (listener == null) return;
             listener.OnStatisticsChanged(statistics);
             if (isNewLineAvailable)
             {
@@ -98,11 +101,13 @@ namespace CSVXtremeLoader
         public void AddFilter(IFilter filter)
         {
             filters.Add(filter);
+            filtersAvailable = true;
         }
 
         public void removeAllFilters()
         {
             filters.Clear();
+            filtersAvailable = false;
         }
 
 

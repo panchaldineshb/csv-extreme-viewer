@@ -18,8 +18,11 @@ namespace CSVXtremeLoader
             this.column = _column;
             this.text = _text;
         }
-        bool IFilter.IsLineValid(Line line, Metadata metadata)
+
+        public override bool IsLineValid(string rawLine, Metadata metadata)
         {
+            Line line = ParseLine(rawLine, metadata);
+
             int index=0;
             if (metadata == null || line == null || metadata.columnNames.Length <= 0 || line.columns.Length <= 0)
                 return false;
