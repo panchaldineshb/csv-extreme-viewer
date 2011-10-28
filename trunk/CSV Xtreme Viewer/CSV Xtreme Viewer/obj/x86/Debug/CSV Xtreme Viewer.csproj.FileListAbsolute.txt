@@ -16,3 +16,5 @@ C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV X
 C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\CSVXtremeLoader.Properties.Resources.resources
 C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV\csv-extreme-viewer\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV new\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\CSV Xtreme Viewer.exe
+C:\Users\WooW\Documents\Visual Studio 2010\Projects\CSV new\CSV Xtreme Viewer\CSV Xtreme Viewer\obj\x86\Debug\CSV Xtreme Viewer.pdb
