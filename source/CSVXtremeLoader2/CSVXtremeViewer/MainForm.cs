@@ -30,7 +30,7 @@ namespace CSVXtremeLoader
             timer.Elapsed += new ElapsedEventHandler(UpdateStatus);
             timer.Enabled = true;
 
-            Thread.CurrentThread.Priority = ThreadPriority.Highest;
+            Thread.CurrentThread.Priority = ThreadPriority.AboveNormal;
         }
 
         delegate void DoUpdateStatus(object source, ElapsedEventArgs e);
