@@ -13,6 +13,7 @@ using CSVLoader;
 using CSVFilter;
 using CSVData;
 using CSVXtremeViewer;
+using System.Threading;
 
 namespace CSVXtremeLoader
 {
@@ -28,6 +29,8 @@ namespace CSVXtremeLoader
             timer.AutoReset = true;
             timer.Elapsed += new ElapsedEventHandler(UpdateStatus);
             timer.Enabled = true;
+
+            Thread.CurrentThread.Priority = ThreadPriority.Highest;
         }
 
         delegate void DoUpdateStatus(object source, ElapsedEventArgs e);
