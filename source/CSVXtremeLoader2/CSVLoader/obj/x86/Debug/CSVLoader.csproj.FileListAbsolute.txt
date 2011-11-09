@@ -1,0 +1,30 @@
+C:\Users\Usuario\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\CSVLoader.exe
+C:\Users\Usuario\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\CSVLoader.pdb
+C:\Users\Usuario\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Usuario\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\CSVLoader.Properties.Resources.resources
+C:\Users\Usuario\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Usuario\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Usuario\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\CSVLoader.exe
+C:\Users\Usuario\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\CSVLoader.pdb
+C:\Users\Usuario\documents\visual studio 2010\Projects\CSVLoader\CSVLoader\obj\x86\Debug\CSVLoader.exe
+C:\Users\Usuario\documents\visual studio 2010\Projects\CSVLoader\CSVLoader\obj\x86\Debug\CSVLoader.pdb
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\obj\x86\Debug\CSVLoader.Properties.Resources.resources
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVLoader.exe
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVLoader.pdb
+C:\Users\Alumno\Desktop\CSVLoader\CSVLoader\obj\x86\Debug\CSVLoader.exe
+C:\Users\Alumno\Desktop\CSVLoader\CSVLoader\obj\x86\Debug\CSVLoader.pdb
+C:\Users\Alumno\Desktop\CSVLoader\CSVLoader\bin\Debug\CSVLoader.exe
+C:\Users\Alumno\Desktop\CSVLoader\CSVLoader\bin\Debug\CSVLoader.pdb
+C:\Users\Alumno\Desktop\CSVLoader\CSVLoader\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Alumno\Desktop\CSVLoader\CSVLoader\obj\x86\Debug\CSVLoader.Properties.Resources.resources
+C:\Users\Alumno\Desktop\CSVLoader\CSVLoader\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Alumno\Desktop\CSVLoader\CSVLoader\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVData.exe
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVFilter.exe
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVIndex.exe
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVFilter.pdb
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVIndex.pdb
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVData.pdb
