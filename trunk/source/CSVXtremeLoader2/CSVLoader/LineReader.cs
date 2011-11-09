@@ -26,6 +26,15 @@ namespace CSVLoader
             closed = false;
         }
 
+        public string GetRawLine(long lineNumber)
+        {
+            if (closed) return null;
+            long position = index.GetLinePosition(lineNumber);
+            if (position < 0) return null;
+            reader.Position = position;
+            return ReadLine();
+        }
+
         public Line GetLine(long lineNumber)
         {
             if (closed) return null;

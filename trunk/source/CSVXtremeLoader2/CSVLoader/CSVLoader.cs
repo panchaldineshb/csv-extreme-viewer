@@ -22,6 +22,7 @@ namespace CSVLoader
         private LineReader lineReader;
         private string filename;
         private bool canceled;
+        private bool finished;
 
         public CSVLoader(string filename)
         {
@@ -40,6 +41,7 @@ namespace CSVLoader
             runReader();
             runProcessing();
             statistics.Status = "Processing";
+            finished = false;
         }
 
         public void AddFilter(IFilter filter)
@@ -61,6 +63,11 @@ namespace CSVLoader
         public CSVStatistics GetStatistics()
         {
             return statistics;
+        }
+
+        public Saver GetSaver(string filename)
+        {
+            return new Saver(filename, lineReader, statistics);
         }
 
         public void Close()

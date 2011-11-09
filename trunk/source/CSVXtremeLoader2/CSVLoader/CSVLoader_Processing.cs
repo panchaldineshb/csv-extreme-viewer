@@ -108,6 +108,7 @@ namespace CSVLoader
             long delta = System.Environment.TickCount - ticks;
             Console.WriteLine("Total Time (ms): " + delta);
             statistics.Status = "Idle";
+            finished = true;
 
             barrier.RemoveParticipant();
         }

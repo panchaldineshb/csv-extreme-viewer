@@ -12,6 +12,7 @@ using System.IO;
 using CSVLoader;
 using CSVFilter;
 using CSVData;
+using CSVXtremeViewer;
 
 namespace CSVXtremeLoader
 {
@@ -81,6 +82,16 @@ namespace CSVXtremeLoader
             loader.SetMetadata(metadata);
             loader.Start();
 
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (loader == null) return;
+
+            if (saveFileDialog.ShowDialog(this) != DialogResult.OK) return;
+
+            SaverDialog dialog = new SaverDialog(loader.GetSaver(saveFileDialog.FileName));
+            dialog.ShowDialog(this);
         }
 
 
