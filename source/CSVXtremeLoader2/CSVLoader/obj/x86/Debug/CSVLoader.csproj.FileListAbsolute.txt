@@ -28,3 +28,17 @@ C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\D
 C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVFilter.pdb
 C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVIndex.pdb
 C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVLoader\bin\Debug\CSVData.pdb
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\CSVLoader.exe
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\CSVLoader.pdb
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVLoader.exe
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVLoader.pdb
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVData.exe
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVFilter.exe
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVIndex.exe
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVFilter.pdb
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVIndex.pdb
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVData.pdb
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\CSVLoader.Properties.Resources.resources
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\GenerateResource.write.1.tlog
