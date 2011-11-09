@@ -1,0 +1,8 @@
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVMetadata\bin\Debug\CSVData.exe
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVMetadata\bin\Debug\CSVData.pdb
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVMetadata\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVMetadata\obj\x86\Debug\CSVData.Properties.Resources.resources
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVMetadata\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVMetadata\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVMetadata\obj\x86\Debug\CSVData.exe
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVMetadata\obj\x86\Debug\CSVData.pdb

@@ -1,0 +1,10 @@
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVFilter\bin\Debug\CSVFilter.exe
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVFilter\bin\Debug\CSVFilter.pdb
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVFilter\bin\Debug\CSVData.exe
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVFilter\bin\Debug\CSVData.pdb
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVFilter\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVFilter\obj\x86\Debug\CSVFilter.Properties.Resources.resources
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVFilter\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVFilter\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVFilter\obj\x86\Debug\CSVFilter.exe
+C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVFilter\obj\x86\Debug\CSVFilter.pdb
