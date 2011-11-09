@@ -49,11 +49,7 @@ namespace CSVXtremeLoader
             DialogResult result = open.ShowDialog(this);
             if (result != DialogResult.OK) return;
 
-            StreamReader sr = new StreamReader(open.FileName);
-            string headers = sr.ReadLine();
-            string type = sr.ReadLine();
-            sr.Close();
-            Metadata metadata = new Metadata(headers.Length,headers,type);
+            Metadata metadata = new Metadata(open.Metadata);
             setupGridWithMetadata(metadata);
             
             string[] strFilters;
@@ -76,20 +72,19 @@ namespace CSVXtremeLoader
             loader.SetListener(this);
             foreach(IFilter f in Filters)
                 loader.AddFilter(f);
-            loader.AddFilter(new FilterByID(0, 5000, 10000));
+            //loader.AddFilter(new FilterByID(0, 5000, 10000));
             loader.SetMetatada(metadata);
             loader.Start();
-        }
-
-
-        private void ToolStripContainer_TopToolStripPanel_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (loader != null) loader.SetListener(null);
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }
