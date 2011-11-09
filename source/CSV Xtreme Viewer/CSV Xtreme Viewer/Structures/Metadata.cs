@@ -17,5 +17,10 @@ namespace CSVXtremeLoader
             columnNames = metadataLine.Split(',');
             columnType = types.Split(',');
         }
+        public Metadata(string metadataLine)
+        {
+            columnNames = metadataLine.Split(',');
+            ColumnsCount = columnNames.GetUpperBound(0) + 1;
+        }
     }
 }
