@@ -35,15 +35,21 @@
             this.cbColumn = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cbNumber = new System.Windows.Forms.ComboBox();
             this.txtNum = new System.Windows.Forms.TextBox();
+            this.cbNumber = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.cbText = new System.Windows.Forms.ComboBox();
             this.txtString = new System.Windows.Forms.TextBox();
+            this.cbText = new System.Windows.Forms.ComboBox();
             this.tabDescription = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtIDTo = new System.Windows.Forms.TextBox();
+            this.txtIDFrom = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabDescription.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbType
@@ -53,7 +59,7 @@
             this.cbType.Location = new System.Drawing.Point(28, 30);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(116, 21);
-            this.cbType.TabIndex = 0;
+            this.cbType.TabIndex = 1;
             this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // label1
@@ -62,7 +68,7 @@
             this.label1.Location = new System.Drawing.Point(25, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Type:";
             // 
             // bCancel
@@ -71,7 +77,7 @@
             this.bCancel.Location = new System.Drawing.Point(333, 231);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(57, 26);
-            this.bCancel.TabIndex = 22;
+            this.bCancel.TabIndex = 7;
             this.bCancel.Text = "&Cancel";
             this.bCancel.UseVisualStyleBackColor = true;
             this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
@@ -81,7 +87,7 @@
             this.bOk.Location = new System.Drawing.Point(270, 231);
             this.bOk.Name = "bOk";
             this.bOk.Size = new System.Drawing.Size(57, 26);
-            this.bOk.TabIndex = 21;
+            this.bOk.TabIndex = 6;
             this.bOk.Text = "&Ok";
             this.bOk.UseVisualStyleBackColor = true;
             this.bOk.Click += new System.EventHandler(this.bOk_Click);
@@ -92,7 +98,7 @@
             this.cbColumn.Location = new System.Drawing.Point(176, 29);
             this.cbColumn.Name = "cbColumn";
             this.cbColumn.Size = new System.Drawing.Size(210, 21);
-            this.cbColumn.TabIndex = 24;
+            this.cbColumn.TabIndex = 3;
             // 
             // label2
             // 
@@ -100,7 +106,7 @@
             this.label2.Location = new System.Drawing.Point(173, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 25;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Column:";
             // 
             // tabPage2
@@ -115,6 +121,15 @@
             this.tabPage2.Text = "Number";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtNum
+            // 
+            this.txtNum.Location = new System.Drawing.Point(144, 7);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(204, 20);
+            this.txtNum.TabIndex = 1;
+            this.txtNum.TextChanged += new System.EventHandler(this.txtNum_TextChanged);
+            this.txtNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtText_KeyDown);
+            // 
             // cbNumber
             // 
             this.cbNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -128,17 +143,8 @@
             this.cbNumber.Location = new System.Drawing.Point(6, 6);
             this.cbNumber.Name = "cbNumber";
             this.cbNumber.Size = new System.Drawing.Size(132, 21);
-            this.cbNumber.TabIndex = 24;
+            this.cbNumber.TabIndex = 0;
             this.cbNumber.SelectedIndexChanged += new System.EventHandler(this.cbRange_SelectedIndexChanged);
-            // 
-            // txtNum
-            // 
-            this.txtNum.Location = new System.Drawing.Point(144, 7);
-            this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(204, 20);
-            this.txtNum.TabIndex = 25;
-            this.txtNum.TextChanged += new System.EventHandler(this.txtNum_TextChanged);
-            this.txtNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtText_KeyPress);
             // 
             // tabPage1
             // 
@@ -152,6 +158,14 @@
             this.tabPage1.Text = "Text";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // txtString
+            // 
+            this.txtString.Location = new System.Drawing.Point(118, 7);
+            this.txtString.Name = "txtString";
+            this.txtString.Size = new System.Drawing.Size(230, 20);
+            this.txtString.TabIndex = 1;
+            this.txtString.TextChanged += new System.EventHandler(this.txtString_TextChanged);
+            // 
             // cbText
             // 
             this.cbText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -164,27 +178,68 @@
             this.cbText.Location = new System.Drawing.Point(6, 6);
             this.cbText.Name = "cbText";
             this.cbText.Size = new System.Drawing.Size(106, 21);
-            this.cbText.TabIndex = 26;
+            this.cbText.TabIndex = 0;
             this.cbText.SelectedIndexChanged += new System.EventHandler(this.cbText_SelectedIndexChanged);
-            // 
-            // txtString
-            // 
-            this.txtString.Location = new System.Drawing.Point(118, 7);
-            this.txtString.Name = "txtString";
-            this.txtString.Size = new System.Drawing.Size(230, 20);
-            this.txtString.TabIndex = 27;
-            this.txtString.TextChanged += new System.EventHandler(this.txtString_TextChanged);
             // 
             // tabDescription
             // 
             this.tabDescription.Controls.Add(this.tabPage1);
             this.tabDescription.Controls.Add(this.tabPage2);
+            this.tabDescription.Controls.Add(this.tabPage3);
             this.tabDescription.Location = new System.Drawing.Point(28, 65);
             this.tabDescription.Name = "tabDescription";
             this.tabDescription.SelectedIndex = 0;
             this.tabDescription.Size = new System.Drawing.Size(362, 159);
-            this.tabDescription.TabIndex = 23;
+            this.tabDescription.TabIndex = 5;
             this.tabDescription.SelectedIndexChanged += new System.EventHandler(this.tabDescription_SelectedIndexChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.txtIDTo);
+            this.tabPage3.Controls.Add(this.txtIDFrom);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(354, 133);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Range";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(179, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "To:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "From:";
+            // 
+            // txtIDTo
+            // 
+            this.txtIDTo.Location = new System.Drawing.Point(208, 11);
+            this.txtIDTo.Name = "txtIDTo";
+            this.txtIDTo.Size = new System.Drawing.Size(109, 20);
+            this.txtIDTo.TabIndex = 3;
+            this.txtIDTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIDTo_KeyDown);
+            // 
+            // txtIDFrom
+            // 
+            this.txtIDFrom.Location = new System.Drawing.Point(56, 11);
+            this.txtIDFrom.Name = "txtIDFrom";
+            this.txtIDFrom.Size = new System.Drawing.Size(107, 20);
+            this.txtIDFrom.TabIndex = 1;
+            this.txtIDFrom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIDFrom_KeyDown);
             // 
             // createFilters
             // 
@@ -208,6 +263,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabDescription.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +285,10 @@
         private System.Windows.Forms.TextBox txtString;
         private System.Windows.Forms.ComboBox cbText;
         private System.Windows.Forms.TabControl tabDescription;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox txtIDFrom;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtIDTo;
+        private System.Windows.Forms.Label label4;
     }
 }

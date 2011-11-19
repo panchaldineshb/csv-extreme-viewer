@@ -9,10 +9,10 @@ namespace CSVFilter
     public class FilterByID : IFilter
     {
         private int column;
-        private int minID;
-        private int maxID;
+        private long minID;
+        private long maxID;
 
-        public FilterByID(int column, int minID, int maxID)
+        public FilterByID(int column, long minID, long maxID)
         {
             this.column = column;
             this.minID = minID;

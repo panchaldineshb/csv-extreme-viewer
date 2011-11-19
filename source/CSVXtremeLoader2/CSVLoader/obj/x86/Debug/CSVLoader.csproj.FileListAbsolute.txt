@@ -42,3 +42,17 @@ C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj
 C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\CSVLoader.Properties.Resources.resources
 C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\CSVLoader.exe
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\CSVLoader.pdb
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVLoader.exe
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVLoader.pdb
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVData.exe
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVFilter.exe
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVIndex.exe
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVFilter.pdb
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVIndex.pdb
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\bin\Debug\CSVData.pdb
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\CSVLoader.Properties.Resources.resources
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVLoader\obj\x86\Debug\GenerateResource.write.1.tlog

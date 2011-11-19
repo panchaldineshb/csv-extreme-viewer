@@ -76,6 +76,15 @@ namespace CSVXtremeLoader
                     Filters.Add(new TextFilter(strFilter[2], strFilter[1], strFilter[3]));
                 else if (strFilter[0].Equals("Number"))
                     Filters.Add(new NumberFilter(strFilter[2], strFilter[1], Double.Parse(strFilter[3])));
+                else if (strFilter[0].Equals("Range"))
+                {
+                    long minID, maxID;
+                    
+                    minID = long.Parse(strFilter[3].Substring(5, strFilter[3].IndexOf("-")-6));
+                    maxID = long.Parse(strFilter[3].Substring(strFilter[3].IndexOf("TO:")+3, strFilter[3].Length-strFilter[3].IndexOf("TO:")-3));
+                    
+                    Filters.Add(new RangeFilter(strFilter[2],minID,maxID));
+                }
             }
 
             loader = new CSVLoader.CSVLoader(open.FileName);
