@@ -94,6 +94,7 @@
             // 
             // cbColumn
             // 
+            this.cbColumn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbColumn.FormattingEnabled = true;
             this.cbColumn.Location = new System.Drawing.Point(176, 29);
             this.cbColumn.Name = "cbColumn";

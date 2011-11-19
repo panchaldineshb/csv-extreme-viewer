@@ -28,19 +28,25 @@ namespace CSVFilter
                 foreach (string s in metadata.columnNames)
                 {
                     if (line.columns.Length <= index)
-                        return false;
+                        return false ^ inverse;
                     if (s.Equals(this.column))
                     {
                         long id = Convert.ToInt64(line.columns[index]);
-                        if (id < minData) return false;
-                        if (id > maxData) return false;
-                        return true;
+                        if (id < minData) return false ^ inverse;
+                        if (id > maxData) return false ^ inverse;
+                        return true ^ inverse;
                     }
                     index++;
                 }
-                return false;
+                return false ^ inverse;
             }
-            catch (FormatException) { return false; }
+            catch (FormatException) { return false ^ inverse; }
         }
+
+        public override string ToString()
+        {
+            return column + " FROM " + minData + " TO " + maxData;
+        }
+
     }
 }

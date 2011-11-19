@@ -26,51 +26,56 @@ namespace CSVFilter
             int index = 0;
             double tmp;
             if (metadata == null || line == null || metadata.columnNames.Length <= 0 || line.columns.Length <= 0)
-                return false;
+                return false ^ inverse;
             foreach (string s in metadata.columnNames)
             {
                 if (s.Equals(this.column))
                 {
                     if (line.columns.Length <= index)
-                        return false;
+                        return false ^ inverse;
                     switch (this.subType)
                     {
                         case "MORE THAN":
                         {
                             if (Double.TryParse(line.columns[index].ToString(), out tmp) == false)
-                                return false;
-                            return (tmp > this.value);
+                                return false ^ inverse;
+                            return (tmp > this.value) ^ inverse;
                         }
                         case "MORE THAN OR EQUAL":
                         {
                             if (Double.TryParse(line.columns[index].ToString(), out tmp) == false)
-                                return false;
-                            return (tmp >= this.value);
+                                return false ^ inverse;
+                            return (tmp >= this.value) ^ inverse;
                         }
                         case "EQUALS":
                         {
                             if (Double.TryParse(line.columns[index].ToString(),out tmp) == false)
-                                return false;
-                            return (tmp == this.value);
+                                return false ^ inverse;
+                            return (tmp == this.value) ^ inverse;
                         }
                         case "LESS THAN OR EQUAL":
                         {
                             if (Double.TryParse(line.columns[index].ToString(), out tmp) == false)
-                                return false;
-                            return (tmp <= this.value);
+                                return false ^ inverse;
+                            return (tmp <= this.value) ^ inverse;
                         }
                         case "LESS THAN":
                         {
                             if (Double.TryParse(line.columns[index].ToString(), out tmp) == false)
-                                return false;
-                            return (tmp < this.value);
+                                return false ^ inverse;
+                            return (tmp < this.value) ^ inverse;
                         }
                     }
                 }
                 index++;
             }
-            return false;
+            return false ^ inverse;
         }
 
+        public override string ToString()
+        {
+            return column + " " + subType + " " + value;
+        }
+    
     }
 }

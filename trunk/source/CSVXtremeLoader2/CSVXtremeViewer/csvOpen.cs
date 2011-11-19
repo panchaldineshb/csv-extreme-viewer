@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CSVFilter;
 
 namespace CSVXtremeLoader
 {
@@ -15,24 +16,59 @@ namespace CSVXtremeLoader
         public string FileName;
         public string Filters;
         public string Metadata;
+        public List<IFilter> FiltersIn = new List<IFilter>();
+        public List<IFilter> FiltersOut = new List<IFilter>();
 
         public csvOpen()
         {
             InitializeComponent();
         }
-        
+
+        private void createFilter(string type, string subtype, string column, string result, List<IFilter> list, ListBox listbox, bool inverse)
+        {
+            IFilter filter2 = null;
+            if (type.Equals("Text"))
+                filter2 = new TextFilter(subtype, column, result);
+            else if (type.Equals("Number"))
+                filter2 = new NumberFilter(subtype, column, Double.Parse(result));
+            else if (type.Equals("Range"))
+            {
+                long minID, maxID;
+
+                minID = long.Parse(result.Substring(0, result.IndexOf("|")));
+                maxID = long.Parse(result.Substring(result.IndexOf("|") + 1));
+
+                filter2 = new RangeFilter(column, minID, maxID);
+            }
+
+            if (filter2 != null)
+            {
+                filter2.inverse = inverse;
+                list.Add(filter2);
+                listbox.Items.Add(filter2);
+            }
+        }
+
         private void bAddIn_Click(object sender, EventArgs e)
         {
-            createFilters filter = new createFilters();
-                       
+            if (lbMetadata.Items.Count == 0)
+            {
+                MessageBox.Show("Empty metadata.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            } 
+            createFilters filter = new createFilters(lbMetadata);
+
             if (filter.ShowDialog(this) == DialogResult.OK)
-                lbInFilters.Items.Add(filter.filterType + " | " + filter.filterColumn + " | " + filter.filterSubType + " | " + filter.filterResult);
+            {
+                createFilter(filter.filterType, filter.filterSubType, filter.filterColumn, filter.filterResult, FiltersIn, lbInFilters, false);
+            }
         }
 
         private void bMetadata_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() != DialogResult.Cancel)
                 this.txtFile.Text = openFileDialog.FileName;
+            updateForm();
         }
 
         private void bOk_Click(object sender, EventArgs e)
@@ -43,45 +79,16 @@ namespace CSVXtremeLoader
                 return;
             }
             FileName = txtFile.Text;
-            this.Filters = string.Empty;
-            foreach (string s in lbInFilters.Items)
+
+            this.Metadata = "";
+            foreach (string s in lbMetadata.Items)
             {
-                this.Filters += s;
-                this.Filters += '\n';
+                this.Metadata += s.Trim();
+                this.Metadata += ",";
             }
-            this.Metadata = string.Empty;
-            if (rbUserDefined.Checked)
-            {
-                foreach (string s in lbMetadata.Items)
-                {
-                    this.Metadata += s.Trim();
-                    this.Metadata += ",";
-                }
-                if(this.Metadata.Length>0)
-                    this.Metadata = this.Metadata.Substring(0, this.Metadata.Length - 1);
-            }
-            else if (rbFirstLine.Checked)
-            {
-                if (!File.Exists(txtFile.Text))
-                {
-                    MessageBox.Show("File does not exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                StreamReader sr = new StreamReader(this.txtFile.Text);
-                this.Metadata = sr.ReadLine();
-                sr.Close();
-            }
-            else if(rbFile.Checked)
-            {
-                if (!File.Exists(txtFile.Text))
-                {
-                    MessageBox.Show("Metadata File does not exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                StreamReader sr = new StreamReader(this.txtMetadata.Text);
-                this.Metadata = sr.ReadLine();
-                sr.Close();
-            }
+            if(this.Metadata.Length>0)
+                this.Metadata = this.Metadata.Substring(0, this.Metadata.Length - 1);
+
             if (this.Metadata == string.Empty)
             {
                 MessageBox.Show("Empty metadata", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -99,10 +106,15 @@ namespace CSVXtremeLoader
 
         private void bAddOut_Click(object sender, EventArgs e)
         {
-            createFilters filter = new createFilters();
+            if (lbMetadata.Items.Count == 0)
+            {
+                MessageBox.Show("Empty metadata.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            createFilters filter = new createFilters(lbMetadata);
 
             if (filter.ShowDialog() == DialogResult.OK)
-                lbInFilters.Items.Add(filter.filterType + " | " + filter.filterColumn + " | " + filter.filterSubType + " | " + filter.filterResult);
+                createFilter(filter.filterType, filter.filterSubType, filter.filterColumn, filter.filterResult, FiltersOut, lbOutFilters, true);
         }
 
         private void bRemoveIn_Click(object sender, EventArgs e)
@@ -139,11 +151,35 @@ namespace CSVXtremeLoader
         {
             txtMetadata.Visible = rbFile.Checked;
             bMetadata.Visible = rbFile.Checked;
-            lbMetadata.Visible = rbUserDefined.Checked;
+            lbMetadata.Visible = true;
             bAddMetadata.Visible = rbUserDefined.Checked;
             bRemoveMetadata.Visible = rbUserDefined.Checked;
             txtNewColumn.Visible = rbUserDefined.Checked;
             lblNewColumn.Visible = rbUserDefined.Checked;
+
+            if (rbFirstLine.Checked) lbMetadata.Height = 69;
+            else lbMetadata.Height = 43;
+
+            if (rbFile.Checked) lbMetadata.Top = 76;
+            else lbMetadata.Top = 49;
+
+            if (rbFirstLine.Checked || rbFile.Checked)
+            {
+                string filename = "";
+                if (rbFirstLine.Checked) filename = txtFile.Text;
+                else filename = txtMetadata.Text;
+                if (File.Exists(filename))
+                {
+                    StreamReader reader = new StreamReader(filename);
+                    string data = reader.ReadLine();
+                    reader.Close();
+
+                    lbMetadata.Items.Clear();
+                    string[] parts = data.Split(',');
+                    foreach (string part in parts) lbMetadata.Items.Add(part.Trim());
+                }
+
+            }
         }
 
         private void bAddMetadata_Click(object sender, EventArgs e)
@@ -162,6 +198,8 @@ namespace CSVXtremeLoader
         {
             if (openMetadataDialog.ShowDialog() != DialogResult.Cancel)
                 this.txtMetadata.Text = openMetadataDialog.FileName;
+
+            updateForm();
         }
     }
 }

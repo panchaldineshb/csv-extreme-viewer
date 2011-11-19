@@ -61,7 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FilterByID.cs" />
     <Compile Include="IFilter.cs" />
     <Compile Include="NumberFilter.cs" />
     <Compile Include="Program.cs" />

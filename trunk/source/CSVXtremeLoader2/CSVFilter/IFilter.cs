@@ -11,6 +11,8 @@ namespace CSVFilter
     {
         protected Regex columnPattern = new Regex("\\G([ ]*\"(?<t>(.|\\\\\")*?)\"[ ]*|(?<t>.*?))(,|$)", RegexOptions.Compiled | RegexOptions.ExplicitCapture);
 
+        public bool inverse = false;
+
         public abstract bool IsLineValid(String rawLine, Metadata metadata);
 
         protected Line ParseLine(string rawLine, Metadata metadata)

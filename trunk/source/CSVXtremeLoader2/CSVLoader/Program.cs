@@ -18,7 +18,7 @@ namespace CSVLoader
         static void Main()
         {
             CSVLoader loader = new CSVLoader("C:\\Users\\Usuario\\Desktop\\Testing\\File3.csv");
-            loader.AddFilter(new FilterByID(0, 1000000, 1500000));
+            loader.AddFilter(new RangeFilter("ID", 1000000, 1500000));
             loader.SetMetadata(new Metadata(5, "a,b,c,d,e"));
             loader.Start();
             LineReader reader = loader.GetLineReader();
