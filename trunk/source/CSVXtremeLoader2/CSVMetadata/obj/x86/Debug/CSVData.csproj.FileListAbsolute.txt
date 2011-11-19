@@ -14,3 +14,11 @@ C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\o
 C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\obj\x86\Debug\CSVData.exe
 C:\Users\Alumno\Desktop\csv-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\obj\x86\Debug\CSVData.pdb
+d:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\bin\Debug\CSVData.exe
+d:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\bin\Debug\CSVData.pdb
+d:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\obj\x86\Debug\ResolveAssemblyReference.cache
+d:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\obj\x86\Debug\CSVData.Properties.Resources.resources
+d:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\obj\x86\Debug\GenerateResource.read.1.tlog
+d:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\obj\x86\Debug\GenerateResource.write.1.tlog
+d:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\obj\x86\Debug\CSVData.exe
+d:\Documents\Visual Studio 2010\Projects\cvs-extreme-viewer\source\CSVXtremeLoader2\CSVMetadata\obj\x86\Debug\CSVData.pdb

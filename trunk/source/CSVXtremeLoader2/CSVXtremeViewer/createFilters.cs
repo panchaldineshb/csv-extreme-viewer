@@ -54,6 +54,11 @@ namespace CSVXtremeLoader
                 this.filterSubType = this.cbNumber.Text;
                 this.filterResult = this.txtNum.Text;
             }
+            else if (this.tabDescription.SelectedTab.Text == "Range")
+            {
+                this.filterSubType = "FROM TO";
+                this.filterResult = "FROM:" + this.txtIDFrom.Text + " - TO:" + this.txtIDTo.Text;
+            }
             /*
             else if (this.tabDescription.SelectedTab.Text == "RegEx")
             {
@@ -74,40 +79,20 @@ namespace CSVXtremeLoader
             RefreshVariables();
         }
 
-        private void txtText_KeyPress(object sender, KeyEventArgs e)
+        private void txtText_KeyDown(object sender, KeyEventArgs e)
         {
-            bool nonNumberEntered = false;
-
-            switch (e.KeyCode)
+            if (isNumber(e))
+                return;
+            if (e.KeyCode != Keys.OemPeriod && e.KeyCode != Keys.Decimal || txtNum.Text.Contains('.'))
             {
-                case Keys.Up:
-                case Keys.Down:
-                case Keys.Left:
-                case Keys.Right:
-                case Keys.End:
-                case Keys.Home:
-                case Keys.Back:
-                    return;
-                default:
-                    break;
-            }
-            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
-            {
-                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
-                {
-                    if (e.KeyCode != Keys.OemPeriod && e.KeyCode != Keys.Decimal || txtNum.Text.Contains('.'))
-                    {
-                        if (e.KeyCode != Keys.OemMinus && e.KeyCode != Keys.Subtract || txtNum.Text.IndexOf("-") != -1 || txtNum.SelectionStart != 0)
-                            nonNumberEntered = true;
-                    }
-                }
-            }
-            if (nonNumberEntered)
-                e.SuppressKeyPress = true;
+                if (e.KeyCode != Keys.OemMinus && e.KeyCode != Keys.Subtract || txtNum.Text.IndexOf("-") != -1 || txtNum.SelectionStart != 0)
+                    e.SuppressKeyPress = true;
+            }    
         }
 
         private void bOk_Click(object sender, EventArgs e)
         {
+            RefreshVariables();
             if (String.IsNullOrWhiteSpace(filterResult) || String.IsNullOrWhiteSpace(cbColumn.Text))
                 MessageBox.Show("Empty or null value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
@@ -148,6 +133,46 @@ namespace CSVXtremeLoader
         {
             this.filterSubType = this.cbNumber.Text;
         }
+
+        private bool isNumber(KeyEventArgs e)
+        {
+            bool nonNumberEntered = false;
+
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                case Keys.Down:
+                case Keys.Left:
+                case Keys.Right:
+                case Keys.End:
+                case Keys.Home:
+                case Keys.Back:
+                    return true;
+                default:
+                    break;
+            }
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                    nonNumberEntered = true;
+            if (nonNumberEntered)
+                return false;
+            return true;
+        }
+
+        private void txtIDTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (isNumber(e))
+                return;
+            e.SuppressKeyPress = true;
+        }
+        
+        private void txtIDFrom_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (isNumber(e))
+                return;
+            e.SuppressKeyPress = true;
+        }
+        
         /*
         private void cbDate_SelectedIndexChanged(object sender, EventArgs e)
         {
