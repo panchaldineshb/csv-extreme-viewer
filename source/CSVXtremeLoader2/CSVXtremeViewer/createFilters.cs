@@ -16,9 +16,12 @@ namespace CSVXtremeLoader
         public string filterType;
         public string filterSubType;
         public string filterColumn;
-        
-        public createFilters()
+
+        private ListBox listbox;
+
+        public createFilters(ListBox listbox)
         {
+            this.listbox = listbox;
             InitializeComponent();
         }
 
@@ -37,6 +40,10 @@ namespace CSVXtremeLoader
             this.cbText.SelectedIndex = 1;
             this.cbNumber.SelectedIndex = 1;
             //this.cbDate.SelectedIndex = 1;
+
+            foreach (object item in listbox.Items)
+                cbColumn.Items.Add(item);
+
             RefreshVariables();
             
         }
@@ -57,7 +64,7 @@ namespace CSVXtremeLoader
             else if (this.tabDescription.SelectedTab.Text == "Range")
             {
                 this.filterSubType = "FROM TO";
-                this.filterResult = "FROM:" + this.txtIDFrom.Text + " - TO:" + this.txtIDTo.Text;
+                this.filterResult = this.txtIDFrom.Text + "|" + this.txtIDTo.Text;
             }
             /*
             else if (this.tabDescription.SelectedTab.Text == "RegEx")

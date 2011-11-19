@@ -41,8 +41,6 @@
             this.bMetadata = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.bRemoveIn = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.bRemoveOut = new System.Windows.Forms.Button();
             this.bAddOut = new System.Windows.Forms.Button();
             this.bOk = new System.Windows.Forms.Button();
@@ -73,16 +71,16 @@
             // 
             // txtFile
             // 
-            this.txtFile.Location = new System.Drawing.Point(68, 8);
+            this.txtFile.Location = new System.Drawing.Point(39, 8);
             this.txtFile.Name = "txtFile";
-            this.txtFile.Size = new System.Drawing.Size(215, 20);
+            this.txtFile.Size = new System.Drawing.Size(429, 20);
             this.txtFile.TabIndex = 2;
             // 
             // txtMetadata
             // 
-            this.txtMetadata.Location = new System.Drawing.Point(7, 49);
+            this.txtMetadata.Location = new System.Drawing.Point(9, 49);
             this.txtMetadata.Name = "txtMetadata";
-            this.txtMetadata.Size = new System.Drawing.Size(250, 20);
+            this.txtMetadata.Size = new System.Drawing.Size(431, 20);
             this.txtMetadata.TabIndex = 3;
             // 
             // lbInFilters
@@ -90,13 +88,13 @@
             this.lbInFilters.FormattingEnabled = true;
             this.lbInFilters.Location = new System.Drawing.Point(33, 17);
             this.lbInFilters.Name = "lbInFilters";
-            this.lbInFilters.Size = new System.Drawing.Size(223, 69);
+            this.lbInFilters.Size = new System.Drawing.Size(407, 95);
             this.lbInFilters.TabIndex = 5;
             // 
             // bAddIn
             // 
             this.bAddIn.Image = ((System.Drawing.Image)(resources.GetObject("bAddIn.Image")));
-            this.bAddIn.Location = new System.Drawing.Point(262, 17);
+            this.bAddIn.Location = new System.Drawing.Point(446, 19);
             this.bAddIn.Name = "bAddIn";
             this.bAddIn.Size = new System.Drawing.Size(24, 24);
             this.bAddIn.TabIndex = 6;
@@ -106,7 +104,7 @@
             // bOpen
             // 
             this.bOpen.Image = ((System.Drawing.Image)(resources.GetObject("bOpen.Image")));
-            this.bOpen.Location = new System.Drawing.Point(289, 8);
+            this.bOpen.Location = new System.Drawing.Point(474, 5);
             this.bOpen.Name = "bOpen";
             this.bOpen.Size = new System.Drawing.Size(24, 24);
             this.bOpen.TabIndex = 7;
@@ -136,13 +134,13 @@
             this.lbOutFilters.FormattingEnabled = true;
             this.lbOutFilters.Location = new System.Drawing.Point(33, 125);
             this.lbOutFilters.Name = "lbOutFilters";
-            this.lbOutFilters.Size = new System.Drawing.Size(223, 69);
+            this.lbOutFilters.Size = new System.Drawing.Size(407, 95);
             this.lbOutFilters.TabIndex = 9;
             // 
             // bMetadata
             // 
             this.bMetadata.Image = ((System.Drawing.Image)(resources.GetObject("bMetadata.Image")));
-            this.bMetadata.Location = new System.Drawing.Point(262, 49);
+            this.bMetadata.Location = new System.Drawing.Point(446, 49);
             this.bMetadata.Name = "bMetadata";
             this.bMetadata.Size = new System.Drawing.Size(24, 24);
             this.bMetadata.TabIndex = 12;
@@ -158,7 +156,7 @@
             // bRemoveIn
             // 
             this.bRemoveIn.Image = ((System.Drawing.Image)(resources.GetObject("bRemoveIn.Image")));
-            this.bRemoveIn.Location = new System.Drawing.Point(262, 49);
+            this.bRemoveIn.Location = new System.Drawing.Point(446, 51);
             this.bRemoveIn.Name = "bRemoveIn";
             this.bRemoveIn.Size = new System.Drawing.Size(24, 24);
             this.bRemoveIn.TabIndex = 13;
@@ -166,28 +164,10 @@
             this.bRemoveIn.UseVisualStyleBackColor = true;
             this.bRemoveIn.Click += new System.EventHandler(this.bRemoveIn_Click);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(209, 92);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(47, 26);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "Edit";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(209, 200);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(47, 26);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "Edit";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // bRemoveOut
             // 
             this.bRemoveOut.Image = ((System.Drawing.Image)(resources.GetObject("bRemoveOut.Image")));
-            this.bRemoveOut.Location = new System.Drawing.Point(262, 157);
+            this.bRemoveOut.Location = new System.Drawing.Point(446, 159);
             this.bRemoveOut.Name = "bRemoveOut";
             this.bRemoveOut.Size = new System.Drawing.Size(24, 24);
             this.bRemoveOut.TabIndex = 18;
@@ -198,7 +178,7 @@
             // bAddOut
             // 
             this.bAddOut.Image = ((System.Drawing.Image)(resources.GetObject("bAddOut.Image")));
-            this.bAddOut.Location = new System.Drawing.Point(262, 125);
+            this.bAddOut.Location = new System.Drawing.Point(446, 127);
             this.bAddOut.Name = "bAddOut";
             this.bAddOut.Size = new System.Drawing.Size(24, 24);
             this.bAddOut.TabIndex = 17;
@@ -230,8 +210,6 @@
             // 
             this.groupBox1.Controls.Add(this.bRemoveOut);
             this.groupBox1.Controls.Add(this.bAddOut);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.bRemoveIn);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lbOutFilters);
@@ -240,7 +218,7 @@
             this.groupBox1.Controls.Add(this.lbInFilters);
             this.groupBox1.Location = new System.Drawing.Point(13, 178);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(300, 236);
+            this.groupBox1.Size = new System.Drawing.Size(485, 236);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters";
@@ -283,7 +261,7 @@
             // bRemoveMetadata
             // 
             this.bRemoveMetadata.Image = ((System.Drawing.Image)(resources.GetObject("bRemoveMetadata.Image")));
-            this.bRemoveMetadata.Location = new System.Drawing.Point(262, 49);
+            this.bRemoveMetadata.Location = new System.Drawing.Point(446, 49);
             this.bRemoveMetadata.Name = "bRemoveMetadata";
             this.bRemoveMetadata.Size = new System.Drawing.Size(24, 24);
             this.bRemoveMetadata.TabIndex = 27;
@@ -294,7 +272,7 @@
             // 
             // bAddMetadata
             // 
-            this.bAddMetadata.Location = new System.Drawing.Point(221, 98);
+            this.bAddMetadata.Location = new System.Drawing.Point(405, 95);
             this.bAddMetadata.Name = "bAddMetadata";
             this.bAddMetadata.Size = new System.Drawing.Size(35, 24);
             this.bAddMetadata.TabIndex = 26;
@@ -306,9 +284,9 @@
             // lbMetadata
             // 
             this.lbMetadata.FormattingEnabled = true;
-            this.lbMetadata.Location = new System.Drawing.Point(7, 49);
+            this.lbMetadata.Location = new System.Drawing.Point(9, 49);
             this.lbMetadata.Name = "lbMetadata";
-            this.lbMetadata.Size = new System.Drawing.Size(249, 43);
+            this.lbMetadata.Size = new System.Drawing.Size(431, 43);
             this.lbMetadata.TabIndex = 25;
             this.lbMetadata.Visible = false;
             // 
@@ -316,7 +294,7 @@
             // 
             this.txtNewColumn.Location = new System.Drawing.Point(80, 98);
             this.txtNewColumn.Name = "txtNewColumn";
-            this.txtNewColumn.Size = new System.Drawing.Size(135, 20);
+            this.txtNewColumn.Size = new System.Drawing.Size(319, 20);
             this.txtNewColumn.TabIndex = 28;
             this.txtNewColumn.Visible = false;
             // 
@@ -344,7 +322,7 @@
             this.groupBox2.Controls.Add(this.bMetadata);
             this.groupBox2.Location = new System.Drawing.Point(13, 38);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(300, 134);
+            this.groupBox2.Size = new System.Drawing.Size(485, 134);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Metadata";
@@ -361,7 +339,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bCancel;
-            this.ClientSize = new System.Drawing.Size(325, 452);
+            this.ClientSize = new System.Drawing.Size(510, 452);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bCancel);
@@ -370,7 +348,8 @@
             this.Controls.Add(this.txtFile);
             this.Controls.Add(this.label1);
             this.Name = "csvOpen";
-            this.Text = "Open";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Open CSV";
             this.Load += new System.EventHandler(this.csvOpen_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -395,8 +374,6 @@
         private System.Windows.Forms.Button bMetadata;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Button bRemoveIn;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button bRemoveOut;
         private System.Windows.Forms.Button bAddOut;
         private System.Windows.Forms.Button bOk;

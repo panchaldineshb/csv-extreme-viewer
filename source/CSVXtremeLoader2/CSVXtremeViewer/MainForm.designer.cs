@@ -251,6 +251,7 @@
             this.MainMenuStrip = this.MenuStrip;
             this.Name = "MainForm";
             this.Text = "CSV Xtreme Viewer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
             this.StatusStrip.ResumeLayout(false);

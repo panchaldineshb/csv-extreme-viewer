@@ -56,41 +56,15 @@ namespace CSVXtremeLoader
 
             if (loader != null) loader.Close();
 
-            StreamReader sr = new StreamReader(open.FileName);
-            string headers = sr.ReadLine();
-            sr.Close();
-            Metadata metadata = new Metadata(headers.Length, headers);
+            Metadata metadata = new Metadata(open.Metadata);
             setupGridWithMetadata(metadata);
             
-            string[] strFilters;
-            string[] strFilter;
-            List<IFilter> Filters = new List<IFilter>();
-            
-            strFilters = open.Filters.Split('\n');
-            foreach (string s in strFilters)
-            {
-                strFilter = s.Split('|');
-                for(int i=0; i<=strFilter.GetUpperBound(0); i++)
-                    strFilter[i] = strFilter[i].Trim();
-                if (strFilter[0].Equals("Text"))
-                    Filters.Add(new TextFilter(strFilter[2], strFilter[1], strFilter[3]));
-                else if (strFilter[0].Equals("Number"))
-                    Filters.Add(new NumberFilter(strFilter[2], strFilter[1], Double.Parse(strFilter[3])));
-                else if (strFilter[0].Equals("Range"))
-                {
-                    long minID, maxID;
-                    
-                    minID = long.Parse(strFilter[3].Substring(5, strFilter[3].IndexOf("-")-6));
-                    maxID = long.Parse(strFilter[3].Substring(strFilter[3].IndexOf("TO:")+3, strFilter[3].Length-strFilter[3].IndexOf("TO:")-3));
-                    
-                    Filters.Add(new RangeFilter(strFilter[2],minID,maxID));
-                }
-            }
-
             loader = new CSVLoader.CSVLoader(open.FileName);
-            foreach(IFilter f in Filters)
+            foreach (IFilter f in open.FiltersIn)
                 loader.AddFilter(f);
-            //loader.AddFilter(new FilterByID(0, 5000, 10000));
+            foreach (IFilter f in open.FiltersOut)
+                loader.AddFilter(f);
+
             loader.SetMetadata(metadata);
             loader.Start();
 
