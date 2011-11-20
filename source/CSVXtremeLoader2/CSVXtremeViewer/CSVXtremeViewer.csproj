@@ -52,6 +52,12 @@
     <Compile Include="createFilters.designer.cs">
       <DependentUpon>createFilters.cs</DependentUpon>
     </Compile>
+    <Compile Include="csvColumns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="csvColumns.Designer.cs">
+      <DependentUpon>csvColumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="csvOpen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="createFilters.resx">
       <DependentUpon>createFilters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="csvColumns.resx">
+      <DependentUpon>csvColumns.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="csvOpen.resx">
       <DependentUpon>csvOpen.cs</DependentUpon>

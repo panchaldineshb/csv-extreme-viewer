@@ -33,6 +33,5 @@ namespace CSVXtremeLoader
             if (e.ColumnIndex >= line.columns.Length) return;
             e.Value = line.columns[e.ColumnIndex];
         }
-
     }
 }

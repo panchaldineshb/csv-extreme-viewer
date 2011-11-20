@@ -54,6 +54,11 @@ namespace CSVLoader
             this.metadata = metadata;
         }
 
+        public Metadata GetMetadata()
+        {
+            return this.metadata;
+        }
+
         public LineReader GetLineReader()
         {
             if (lineReader == null) lineReader = new LineReader(filename, index, metadata);
