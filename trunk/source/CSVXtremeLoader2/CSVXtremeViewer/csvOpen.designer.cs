@@ -80,7 +80,7 @@
             // 
             this.txtMetadata.Location = new System.Drawing.Point(9, 49);
             this.txtMetadata.Name = "txtMetadata";
-            this.txtMetadata.Size = new System.Drawing.Size(431, 20);
+            this.txtMetadata.Size = new System.Drawing.Size(440, 20);
             this.txtMetadata.TabIndex = 3;
             // 
             // lbInFilters
@@ -88,13 +88,13 @@
             this.lbInFilters.FormattingEnabled = true;
             this.lbInFilters.Location = new System.Drawing.Point(33, 17);
             this.lbInFilters.Name = "lbInFilters";
-            this.lbInFilters.Size = new System.Drawing.Size(407, 95);
+            this.lbInFilters.Size = new System.Drawing.Size(416, 95);
             this.lbInFilters.TabIndex = 5;
             // 
             // bAddIn
             // 
             this.bAddIn.Image = ((System.Drawing.Image)(resources.GetObject("bAddIn.Image")));
-            this.bAddIn.Location = new System.Drawing.Point(446, 19);
+            this.bAddIn.Location = new System.Drawing.Point(455, 17);
             this.bAddIn.Name = "bAddIn";
             this.bAddIn.Size = new System.Drawing.Size(24, 24);
             this.bAddIn.TabIndex = 6;
@@ -116,31 +116,31 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 13);
+            this.label4.Size = new System.Drawing.Size(16, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "In:";
+            this.label4.Text = "In";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 125);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.Size = new System.Drawing.Size(24, 13);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Out:";
+            this.label5.Text = "Out";
             // 
             // lbOutFilters
             // 
             this.lbOutFilters.FormattingEnabled = true;
             this.lbOutFilters.Location = new System.Drawing.Point(33, 125);
             this.lbOutFilters.Name = "lbOutFilters";
-            this.lbOutFilters.Size = new System.Drawing.Size(407, 95);
+            this.lbOutFilters.Size = new System.Drawing.Size(416, 95);
             this.lbOutFilters.TabIndex = 9;
             // 
             // bMetadata
             // 
             this.bMetadata.Image = ((System.Drawing.Image)(resources.GetObject("bMetadata.Image")));
-            this.bMetadata.Location = new System.Drawing.Point(446, 49);
+            this.bMetadata.Location = new System.Drawing.Point(455, 49);
             this.bMetadata.Name = "bMetadata";
             this.bMetadata.Size = new System.Drawing.Size(24, 24);
             this.bMetadata.TabIndex = 12;
@@ -156,7 +156,7 @@
             // bRemoveIn
             // 
             this.bRemoveIn.Image = ((System.Drawing.Image)(resources.GetObject("bRemoveIn.Image")));
-            this.bRemoveIn.Location = new System.Drawing.Point(446, 51);
+            this.bRemoveIn.Location = new System.Drawing.Point(455, 47);
             this.bRemoveIn.Name = "bRemoveIn";
             this.bRemoveIn.Size = new System.Drawing.Size(24, 24);
             this.bRemoveIn.TabIndex = 13;
@@ -167,7 +167,7 @@
             // bRemoveOut
             // 
             this.bRemoveOut.Image = ((System.Drawing.Image)(resources.GetObject("bRemoveOut.Image")));
-            this.bRemoveOut.Location = new System.Drawing.Point(446, 159);
+            this.bRemoveOut.Location = new System.Drawing.Point(455, 155);
             this.bRemoveOut.Name = "bRemoveOut";
             this.bRemoveOut.Size = new System.Drawing.Size(24, 24);
             this.bRemoveOut.TabIndex = 18;
@@ -178,7 +178,7 @@
             // bAddOut
             // 
             this.bAddOut.Image = ((System.Drawing.Image)(resources.GetObject("bAddOut.Image")));
-            this.bAddOut.Location = new System.Drawing.Point(446, 127);
+            this.bAddOut.Location = new System.Drawing.Point(455, 125);
             this.bAddOut.Name = "bAddOut";
             this.bAddOut.Size = new System.Drawing.Size(24, 24);
             this.bAddOut.TabIndex = 17;
@@ -187,7 +187,7 @@
             // 
             // bOk
             // 
-            this.bOk.Location = new System.Drawing.Point(193, 420);
+            this.bOk.Location = new System.Drawing.Point(378, 420);
             this.bOk.Name = "bOk";
             this.bOk.Size = new System.Drawing.Size(57, 26);
             this.bOk.TabIndex = 19;
@@ -198,7 +198,7 @@
             // bCancel
             // 
             this.bCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bCancel.Location = new System.Drawing.Point(256, 420);
+            this.bCancel.Location = new System.Drawing.Point(441, 420);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(57, 26);
             this.bCancel.TabIndex = 20;
@@ -261,7 +261,7 @@
             // bRemoveMetadata
             // 
             this.bRemoveMetadata.Image = ((System.Drawing.Image)(resources.GetObject("bRemoveMetadata.Image")));
-            this.bRemoveMetadata.Location = new System.Drawing.Point(446, 49);
+            this.bRemoveMetadata.Location = new System.Drawing.Point(455, 49);
             this.bRemoveMetadata.Name = "bRemoveMetadata";
             this.bRemoveMetadata.Size = new System.Drawing.Size(24, 24);
             this.bRemoveMetadata.TabIndex = 27;
@@ -272,7 +272,7 @@
             // 
             // bAddMetadata
             // 
-            this.bAddMetadata.Location = new System.Drawing.Point(405, 95);
+            this.bAddMetadata.Location = new System.Drawing.Point(414, 98);
             this.bAddMetadata.Name = "bAddMetadata";
             this.bAddMetadata.Size = new System.Drawing.Size(35, 24);
             this.bAddMetadata.TabIndex = 26;
@@ -286,22 +286,22 @@
             this.lbMetadata.FormattingEnabled = true;
             this.lbMetadata.Location = new System.Drawing.Point(9, 49);
             this.lbMetadata.Name = "lbMetadata";
-            this.lbMetadata.Size = new System.Drawing.Size(431, 43);
+            this.lbMetadata.Size = new System.Drawing.Size(440, 43);
             this.lbMetadata.TabIndex = 25;
             this.lbMetadata.Visible = false;
             // 
             // txtNewColumn
             // 
-            this.txtNewColumn.Location = new System.Drawing.Point(80, 98);
+            this.txtNewColumn.Location = new System.Drawing.Point(79, 101);
             this.txtNewColumn.Name = "txtNewColumn";
-            this.txtNewColumn.Size = new System.Drawing.Size(319, 20);
+            this.txtNewColumn.Size = new System.Drawing.Size(329, 20);
             this.txtNewColumn.TabIndex = 28;
             this.txtNewColumn.Visible = false;
             // 
             // lblNewColumn
             // 
             this.lblNewColumn.AutoSize = true;
-            this.lblNewColumn.Location = new System.Drawing.Point(6, 101);
+            this.lblNewColumn.Location = new System.Drawing.Point(7, 104);
             this.lblNewColumn.Name = "lblNewColumn";
             this.lblNewColumn.Size = new System.Drawing.Size(66, 13);
             this.lblNewColumn.TabIndex = 29;
@@ -312,14 +312,14 @@
             // 
             this.groupBox2.Controls.Add(this.lblNewColumn);
             this.groupBox2.Controls.Add(this.rbUserDefined);
-            this.groupBox2.Controls.Add(this.bRemoveMetadata);
             this.groupBox2.Controls.Add(this.rbFirstLine);
             this.groupBox2.Controls.Add(this.txtNewColumn);
             this.groupBox2.Controls.Add(this.rbFile);
             this.groupBox2.Controls.Add(this.bAddMetadata);
+            this.groupBox2.Controls.Add(this.bMetadata);
+            this.groupBox2.Controls.Add(this.bRemoveMetadata);
             this.groupBox2.Controls.Add(this.lbMetadata);
             this.groupBox2.Controls.Add(this.txtMetadata);
-            this.groupBox2.Controls.Add(this.bMetadata);
             this.groupBox2.Location = new System.Drawing.Point(13, 38);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(485, 134);
@@ -339,7 +339,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bCancel;
-            this.ClientSize = new System.Drawing.Size(510, 452);
+            this.ClientSize = new System.Drawing.Size(510, 455);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bCancel);

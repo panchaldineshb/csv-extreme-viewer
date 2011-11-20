@@ -39,8 +39,7 @@ namespace CSVXtremeLoader
             this.cbType.Text = this.tabDescription.SelectedTab.Text;
             this.cbText.SelectedIndex = 1;
             this.cbNumber.SelectedIndex = 1;
-            //this.cbDate.SelectedIndex = 1;
-
+            
             foreach (object item in listbox.Items)
                 cbColumn.Items.Add(item);
 
@@ -66,18 +65,6 @@ namespace CSVXtremeLoader
                 this.filterSubType = "FROM TO";
                 this.filterResult = this.txtIDFrom.Text + "|" + this.txtIDTo.Text;
             }
-            /*
-            else if (this.tabDescription.SelectedTab.Text == "RegEx")
-            {
-                this.filterSubType = "EQUALS";
-                this.filterResult = this.txtRegEx.Text;
-            }
-            else if (this.tabDescription.SelectedTab.Text == "Date")
-            {
-                this.filterSubType = this.cbDate.Text;
-                this.filterResult = this.dateTime.Value.ToString();
-            }
-            */
         }
 
         private void tabDescription_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,12 +112,7 @@ namespace CSVXtremeLoader
         {
             this.filterResult = this.txtNum.Text;
         }
-        /*
-        private void txtRegEx_TextChanged(object sender, EventArgs e)
-        {
-            this.filterResult = this.txtRegEx.Text;
-        }
-        */
+        
         private void cbText_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.filterSubType = this.cbText.Text;
@@ -170,27 +152,23 @@ namespace CSVXtremeLoader
         {
             if (isNumber(e))
                 return;
-            e.SuppressKeyPress = true;
+            if (e.KeyCode != Keys.OemPeriod && e.KeyCode != Keys.Decimal || txtIDTo.Text.Contains('.'))
+            {
+                if (e.KeyCode != Keys.OemMinus && e.KeyCode != Keys.Subtract || txtIDTo.Text.IndexOf("-") != -1 || txtIDTo.SelectionStart != 0)
+                    e.SuppressKeyPress = true;
+            }
         }
-        
+
         private void txtIDFrom_KeyDown(object sender, KeyEventArgs e)
         {
             if (isNumber(e))
                 return;
-            e.SuppressKeyPress = true;
+            if (e.KeyCode != Keys.OemPeriod && e.KeyCode != Keys.Decimal || txtIDFrom.Text.Contains('.'))
+            {
+                if (e.KeyCode != Keys.OemMinus && e.KeyCode != Keys.Subtract || txtIDFrom.Text.IndexOf("-") != -1 || txtIDFrom.SelectionStart != 0)
+                    e.SuppressKeyPress = true;
+            }
         }
         
-        /*
-        private void cbDate_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.filterSubType = this.cbDate.Text;
-        }
-        */
-        /*
-        private void dateTime_ValueChanged(object sender, EventArgs e)
-        {
-            this.filterResult = this.dateTime.Value.ToString();
-        }
-        */
     }
 }

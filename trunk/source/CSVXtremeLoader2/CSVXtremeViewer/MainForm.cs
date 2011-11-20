@@ -50,6 +50,36 @@ namespace CSVXtremeLoader
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            openFile();
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveAs();
+        }
+
+        private void bOpen_Click(object sender, EventArgs e)
+        {
+            openFile();
+        }
+
+        private void bSave_Click(object sender, EventArgs e)
+        {
+            saveAs();
+        }
+
+        private void saveAs()
+        {
+            if (loader == null) return;
+
+            if (saveFileDialog.ShowDialog(this) != DialogResult.OK) return;
+
+            SaverDialog dialog = new SaverDialog(loader.GetSaver(saveFileDialog.FileName));
+            dialog.ShowDialog(this);
+        }
+
+        private void openFile()
+        {
             csvOpen open = new csvOpen();
             DialogResult result = open.ShowDialog(this);
             if (result != DialogResult.OK) return;
@@ -67,19 +97,20 @@ namespace CSVXtremeLoader
 
             loader.SetMetadata(metadata);
             loader.Start();
-
+            columnsToolStripMenuItem.Enabled = true;
         }
 
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void columnsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (loader == null) return;
-
-            if (saveFileDialog.ShowDialog(this) != DialogResult.OK) return;
-
-            SaverDialog dialog = new SaverDialog(loader.GetSaver(saveFileDialog.FileName));
-            dialog.ShowDialog(this);
+            if (loader == null)
+                return;
+            csvColumns columns = new csvColumns( loader.GetMetadata() );
+            DialogResult result = columns.ShowDialog(this);
+            if (result != DialogResult.OK)
+                return;
+            for (int i = 0; i < dataGridView.ColumnCount; i++)
+                dataGridView.Columns[i].Visible = loader.GetMetadata().visible[i];
         }
-
 
     }
 }
