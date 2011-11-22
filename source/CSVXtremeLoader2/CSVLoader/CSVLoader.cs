@@ -23,6 +23,7 @@ namespace CSVLoader
         private string filename;
         private bool canceled;
         private bool finished;
+        public bool IgnoreFirstLine { get; set; }
 
         public CSVLoader(string filename)
         {
@@ -72,7 +73,7 @@ namespace CSVLoader
 
         public Saver GetSaver(string filename)
         {
-            return new Saver(filename, lineReader, statistics);
+            return new Saver(filename, metadata, lineReader, statistics);
         }
 
         public void Close()
