@@ -96,6 +96,7 @@ namespace CSVXtremeLoader
                 loader.AddFilter(f);
 
             loader.SetMetadata(metadata);
+            loader.IgnoreFirstLine = open.IsFirstLineUsed();
             loader.Start();
             columnsToolStripMenuItem.Enabled = true;
         }

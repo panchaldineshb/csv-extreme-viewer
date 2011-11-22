@@ -115,6 +115,12 @@ namespace CSVLoader
 
         private void ProcessLine(string line, long position)
         {
+            if (IgnoreFirstLine)
+            {
+                IgnoreFirstLine = false;
+                return;
+            }
+
             statistics.LinesCount++;
 
             bool isValid = true;

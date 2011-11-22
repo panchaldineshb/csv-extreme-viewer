@@ -40,11 +40,16 @@ namespace CSVXtremeViewer
             int percent = (int)(saver.CurrentLine * 100 / saver.TotalLines);
             progressBar.Value = percent;
 
-            if (saver.CurrentLine == saver.TotalLines)
+            if ((saver.CurrentLine == saver.TotalLines) || (saver.Canceled == true))
             {
                 timer.Enabled = false;
                 Close();
             }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            saver.Canceled = true;
         }
 
     }

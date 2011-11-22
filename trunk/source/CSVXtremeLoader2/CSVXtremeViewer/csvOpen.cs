@@ -201,5 +201,10 @@ namespace CSVXtremeLoader
 
             updateForm();
         }
+
+        public bool IsFirstLineUsed()
+        {
+            return rbFirstLine.Checked;
+        }
     }
 }

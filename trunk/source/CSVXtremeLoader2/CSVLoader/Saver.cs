@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading;
+using CSVData;
 
 namespace CSVLoader
 {
@@ -12,17 +13,21 @@ namespace CSVLoader
         private StreamWriter writer;
         private LineReader lineReader;
         private CSVStatistics statistics;
+        private Metadata metadata;
         private Thread saverThread;
 
         public long CurrentLine;
         public long TotalLines;
+        public bool Canceled { get; set; }
 
-        public Saver(string filename, LineReader lineReader, CSVStatistics statistics)
+        public Saver(string filename, Metadata metadata, LineReader lineReader, CSVStatistics statistics)
         {
             writer = new StreamWriter(File.Create(filename));
             this.lineReader = lineReader;
             this.statistics = statistics;
-            TotalLines = statistics.LinesCount;
+            this.metadata = metadata;
+            TotalLines = statistics.FilteredLines;
+            Canceled = false;
         }
 
         public void Start()
@@ -34,8 +39,10 @@ namespace CSVLoader
 
         private void SaveProcess()
         {
+            writer.WriteLine(metadata.ToString());
             for (CurrentLine = 0; CurrentLine < statistics.FilteredLines; CurrentLine++)
             {
+                if (Canceled) break;
                 string line = lineReader.GetRawLine(CurrentLine);
                 writer.WriteLine(line);
             }

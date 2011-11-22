@@ -19,6 +19,7 @@ namespace CSVData
             for (int i = 0; i < visible.Length; i++)
                 visible[i] = true;
         }
+
         public Metadata(string metadataLine)
         {
 			//Still needs to check for "" with intermediate comma and trim each string
@@ -27,6 +28,11 @@ namespace CSVData
             visible = new bool[ColumnsCount];
             for ( int i = 0; i < visible.Length ; i++ )
                 visible[i] = true;
+        }
+
+        public override string ToString()
+        {
+            return String.Join(",", columnNames);
         }
     }
 }
