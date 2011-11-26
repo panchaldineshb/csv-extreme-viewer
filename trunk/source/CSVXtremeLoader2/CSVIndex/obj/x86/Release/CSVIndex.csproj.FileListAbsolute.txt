@@ -6,3 +6,11 @@ C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVIndex\obj\x8
 C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVIndex\obj\x86\Release\GenerateResource.write.1.tlog
 C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVIndex\obj\x86\Release\CSVIndex.exe
 C:\Users\Usuario\Documents\Visual Studio 2010\Projects\CSVLoader\CSVIndex\obj\x86\Release\CSVIndex.pdb
+C:\Users\WooW\Desktop\Installer\source\CSVXtremeLoader2\CSVIndex\bin\Release\CSVIndex.exe
+C:\Users\WooW\Desktop\Installer\source\CSVXtremeLoader2\CSVIndex\bin\Release\CSVIndex.pdb
+C:\Users\WooW\Desktop\Installer\source\CSVXtremeLoader2\CSVIndex\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\WooW\Desktop\Installer\source\CSVXtremeLoader2\CSVIndex\obj\x86\Release\CSVIndex.Properties.Resources.resources
+C:\Users\WooW\Desktop\Installer\source\CSVXtremeLoader2\CSVIndex\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\WooW\Desktop\Installer\source\CSVXtremeLoader2\CSVIndex\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\WooW\Desktop\Installer\source\CSVXtremeLoader2\CSVIndex\obj\x86\Release\CSVIndex.exe
+C:\Users\WooW\Desktop\Installer\source\CSVXtremeLoader2\CSVIndex\obj\x86\Release\CSVIndex.pdb
