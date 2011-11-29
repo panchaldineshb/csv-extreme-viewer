@@ -109,7 +109,7 @@
             this.bOpen.Size = new System.Drawing.Size(24, 24);
             this.bOpen.TabIndex = 7;
             this.bOpen.UseVisualStyleBackColor = true;
-            this.bOpen.Click += new System.EventHandler(this.bMetadata_Click);
+            this.bOpen.Click += new System.EventHandler(this.bOpen_Click);
             // 
             // label4
             // 
@@ -145,7 +145,7 @@
             this.bMetadata.Size = new System.Drawing.Size(24, 24);
             this.bMetadata.TabIndex = 12;
             this.bMetadata.UseVisualStyleBackColor = true;
-            this.bMetadata.Click += new System.EventHandler(this.bMetadata_Click_1);
+            this.bMetadata.Click += new System.EventHandler(this.bMetadata_Click);
             // 
             // openFileDialog
             // 

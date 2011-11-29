@@ -64,13 +64,6 @@ namespace CSVXtremeLoader
             }
         }
 
-        private void bMetadata_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog.ShowDialog() != DialogResult.Cancel)
-                this.txtFile.Text = openFileDialog.FileName;
-            updateForm();
-        }
-
         private void bOk_Click(object sender, EventArgs e)
         {
             if (!File.Exists(txtFile.Text))
@@ -194,17 +187,23 @@ namespace CSVXtremeLoader
             this.lbMetadata.Items.Remove(this.lbMetadata.SelectedItem);
         }
 
-        private void bMetadata_Click_1(object sender, EventArgs e)
-        {
-            if (openMetadataDialog.ShowDialog() != DialogResult.Cancel)
-                this.txtMetadata.Text = openMetadataDialog.FileName;
-
-            updateForm();
-        }
-
         public bool IsFirstLineUsed()
         {
             return rbFirstLine.Checked;
+        }
+
+        private void bOpen_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() != DialogResult.Cancel)
+                this.txtFile.Text = openFileDialog.FileName;
+            updateForm();
+        }
+
+        private void bMetadata_Click(object sender, EventArgs e)
+        {
+            if (openMetadataDialog.ShowDialog() != DialogResult.Cancel)
+                this.txtMetadata.Text = openMetadataDialog.FileName;
+            updateForm();
         }
     }
 }

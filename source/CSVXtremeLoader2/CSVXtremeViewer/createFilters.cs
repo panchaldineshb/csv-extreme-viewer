@@ -37,12 +37,11 @@ namespace CSVXtremeLoader
             foreach (TabPage t in tabDescription.TabPages)
                 this.cbType.Items.Add(t.Text);
             this.cbType.Text = this.tabDescription.SelectedTab.Text;
-            this.cbText.SelectedIndex = 1;
-            this.cbNumber.SelectedIndex = 1;
-            
+            this.cbText.SelectedIndex = 0;
+            this.cbNumber.SelectedIndex = 0;
             foreach (object item in listbox.Items)
                 cbColumn.Items.Add(item);
-
+            this.cbColumn.SelectedIndex = 0;
             RefreshVariables();
             
         }
@@ -88,7 +87,9 @@ namespace CSVXtremeLoader
         {
             RefreshVariables();
             if (String.IsNullOrWhiteSpace(filterResult) || String.IsNullOrWhiteSpace(cbColumn.Text))
-                MessageBox.Show("Empty or null value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Empty or null value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (this.filterType == "Range" && ( Double.Parse(this.txtIDFrom.Text) > Double.Parse(this.txtIDTo.Text)))
+                MessageBox.Show("Value FROM should be less than TO", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 this.DialogResult = DialogResult.OK;
