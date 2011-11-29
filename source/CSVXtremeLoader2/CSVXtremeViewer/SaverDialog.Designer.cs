@@ -30,6 +30,7 @@
         {
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // progressBar
@@ -48,11 +49,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Saving...";
             // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(367, 54);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 2;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // SaverDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 96);
+            this.ClientSize = new System.Drawing.Size(454, 82);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar);
             this.Name = "SaverDialog";
@@ -66,5 +78,6 @@
 
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
