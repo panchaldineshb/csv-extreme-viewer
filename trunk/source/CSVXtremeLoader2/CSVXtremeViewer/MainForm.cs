@@ -72,6 +72,9 @@ namespace CSVXtremeLoader
         {
             if (loader == null) return;
 
+            if (dataGridView.RowCount == 0)
+                return;
+
             if (saveFileDialog.ShowDialog(this) != DialogResult.OK) return;
 
             SaverDialog dialog = new SaverDialog(loader.GetSaver(saveFileDialog.FileName));
